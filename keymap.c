@@ -237,19 +237,15 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (keycode == KC_ESC && record->event.pressed) {
-    bool queue = true;
-
-    if ((get_oneshot_mods ()) && !has_oneshot_mods_timed_out ()) {
-      clear_oneshot_mods ();
-      queue = false;
-    }
-    if (layer_state & (1UL << MVMNT)) {
-      layer_off (MVMNT);
-      queue = false;
-    }
-    return queue;
-  }
+  //uint8_t layer = biton32(layer_state);
+  //if (keycode == KC_ESC && record->event.pressed) {
+    //bool queue = true;
+    //if (layer_state & (1UL << MVMNT)) {
+    //layer_off (MVMNT);
+    //queue = false;
+    //}
+    //return queue;
+  //}
 
   switch (keycode) {
     case VRSN:
@@ -272,6 +268,17 @@ void matrix_init_user(void) {
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
-
-};
+  uint8_t layer = biton32(layer_state);
+  if (layer == MVMNT) {
+        ergodox_right_led_2_on();
+        ergodox_right_led_2_set (LED_BRIGHTNESS_LO);
+      } else if (layer == SYMB) {
+        ergodox_right_led_1_on();
+        ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
+      } else {
+       ergodox_right_led_3_off();
+       ergodox_right_led_2_off();
+       ergodox_right_led_1_off();
+     }
+  };
 
