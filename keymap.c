@@ -24,11 +24,13 @@ enum {
   CT_RBP,
   CT_ESCF4,
   CT_SHIFTAB,
+  CT_COL,
   CT_TA,
   CT_F2,
   CT_F4,
   CT_F5,
-  CT_PGE
+  CT_PGE,
+  CT_NAV,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -37,16 +39,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * | \ / |  |   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |   =/+  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  |   ;  |   -    |
+ * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   -    |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tb/SftTb|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
- * |--------+------+------+------+------+------| PgDwn|           |      |------+------+------+------+------+--------|
- * |        |  Z   |   X  |   C  |   V  |   B  | PgUp |           |      |   K  |   M  |   ,  |   .  |   /  | Enter  |
+ * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------|
+ * |        |  Z   |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  | Enter  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      | Alt  | Ctrl | SYMB |                                       | MVMNT| Ctrl | Alt  |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | LAlt |  Del |       | RESET|      |
+ *                                        | LAlt |  Del |       | RESET| App  |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Ctrl |       |      |        |      |
  *                                 | Space|      |------|       |------| Enter  | BkSp |
@@ -67,11 +69,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_SPC, KC_LSHIFT,TD(CT_ESCF4),
         // right hand
              ALTG(KC_DELT),  KC_6,   KC_7,  KC_8,   KC_9,    KC_0,               KC_EQL,
-             TD(CT_RBP),     KC_J,   KC_L,  KC_U,   KC_Y,   KC_SCLN,             KC_MINS,
+             TD(CT_RBP),     KC_J,   KC_L,  KC_U,   KC_Y,   TD(CT_COL),             KC_MINS,
                              KC_H,   KC_N,  KC_E,   KC_I,   KC_O,                KC_QUOT,
-             KC_NO,          KC_K,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,             KC_ENT,
+             TD(CT_NAV),          KC_K,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,             KC_ENT,
                                     TT(MVMNT), KC_LCTRL,  KC_LALT,  KC_NO,            KC_NO,
-             RESET,           KC_NO,
+             RESET,           KC_APPLICATION,
              KC_NO,
              KC_LGUI,         KC_ENT, KC_BSPC
     ),
@@ -83,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----------+------+------+------+------+-------------|           |------+------+------+------+------+------+-----------|
  * |           |MwhlL |MwhlD | MwhlU| MwhlR|      |      |           |      |      | Msp2 | Msp0 | Msp1 |      |           |
  * |-----------+------+------+------+------+------| PgUp |           |      |------+------+------+------+------+-----------|
- * |   Tab     |MsLeft|MsDown| MsUp |MsRght|      |------|           |------|      | Left | Down | Up   |  Rght|           |
+ * |           |MsLeft|MsDown| MsUp |MsRght|      |------|           |------|      | Left | Down | Up   |  Rght|           |
  * |-----------+------+------+------+------+------| PgDn |           |      |------+------+------+------+------+-----------|
  * |           |Ctrl+z|Ctrl+x|Ctrl+c|Ctrl+v|      |      |           |      |      |      |      |      |      |           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
@@ -221,7 +223,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     }
   ,[CT_RBP] = ACTION_TAP_DANCE_DOUBLE (KC_RPRN, KC_RBRC)
   ,[CT_PGE] = ACTION_TAP_DANCE_DOUBLE (KC_PGDN, KC_PGUP)
+  ,[CT_NAV] = ACTION_TAP_DANCE_DOUBLE (KC_WBAK, KC_WFWD)
   ,[CT_SHIFTAB] = ACTION_TAP_DANCE_DOUBLE (KC_TAB, LSFT(KC_TAB))
+  ,[CT_COL] = ACTION_TAP_DANCE_DOUBLE (KC_SCLN, LSFT(KC_COLN))
   ,[CT_F2] = ACTION_TAP_DANCE_DOUBLE (KC_2, KC_F2)
   ,[CT_F4] = ACTION_TAP_DANCE_DOUBLE (KC_4, KC_F4)
   ,[CT_F5] = ACTION_TAP_DANCE_DOUBLE (KC_5, KC_F5)
