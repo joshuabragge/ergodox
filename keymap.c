@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  |   ;  |   -    |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
- * |Tab/MVMT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
+ * |Tb/SftTb|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
  * |--------+------+------+------+------+------| PgDwn|           |      |------+------+------+------+------+--------|
  * |        |  Z   |   X  |   C  |   V  |   B  | PgUp |           |      |   K  |   M  |   ,  |   .  |   /  | Enter  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_BSLS,        KC_1,      TD(CT_F2),   KC_3,   TD(CT_F4),   TD(CT_F5),   LGUI(KC_L),
         KC_DELT,          KC_Q,      KC_W,   KC_F,   KC_P,   KC_G,   TD(CT_LBP),
-        TD(CT_TA),      KC_A,      KC_R,   KC_S,   KC_T,   KC_D,
+        TD(CT_SHIFTAB),      KC_A,      KC_R,   KC_S,   KC_T,   KC_D,
         KC_NO,       KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   TD(CT_PGE),
         KC_NO,         KC_NO,      KC_LALT,KC_LCTRL,TT(SYMB),
                                                               KC_LALT,       KC_DELT,
