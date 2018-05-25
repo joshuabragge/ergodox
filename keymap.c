@@ -24,6 +24,7 @@ enum {
   CT_RBP,
   CT_ESCF4,
   CT_TA,
+  CT_F2,
   CT_F4,
   CT_F5,
   CT_PGE
@@ -33,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | \ / |  |   1  |   2  |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |   =/+  |
+ * | \ / |  |   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |   =/+  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  |   ;  |   -    |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
@@ -55,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_BSLS,        KC_1,      KC_2,   KC_3,   TD(CT_F4),   TD(CT_F5),   LGUI(KC_L),
+        KC_BSLS,        KC_1,      TD(CT_F2),   KC_3,   TD(CT_F4),   TD(CT_F5),   LGUI(KC_L),
         KC_DELT,          KC_Q,      KC_W,   KC_F,   KC_P,   KC_G,   TD(CT_LBP),
         TD(CT_TA),      KC_A,      KC_R,   KC_S,   KC_T,   KC_D,
         KC_NO,       KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   TD(CT_PGE),
@@ -125,13 +126,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,---------------------------------------------------.           ,--------------------------------------------------.
  * |         |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
  * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         |  ^   |  &   |   *  |   ~  |   `  |      |           |      |   =  |   7  |   8  |   9  |   *  |   F12  |
+ * |         |  ^   |  &   |   *  |   ~  |   `  |      |           |      |   -  |   7  |   8  |   9  |   *  |   F12  |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |  !   |   @  |   #  |   $  |   %  |------|           |------|   .  |   4  |   5  |   6  |   +  |        |
+ * |         |  !   |   @  |   #  |   $  |   %  |------|           |------|   =  |   4  |   5  |   6  |   +  |        |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |      |      |      |      |      |      |           |      |  0   |   1  |   2  |   3  |   /  |        |
+ * |         |      |      |      |      |      |      |           |      |      |   1  |   2  |   3  |   /  |        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |       |      |      |      |      |                                       | Left | Down |  Up  | Right|      |
+ *   |       |      |      |      |      |                                       |   0  |   .  |      |     |      |
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
@@ -156,10 +157,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_TRNS,KC_TRNS,KC_TRNS,
        // right hand 
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
-       KC_TRNS, KC_EQL,   KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
-                KC_DOT, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
-       KC_TRNS, KC_0,     KC_1,   KC_2,     KC_3,     KC_SLASH,  KC_TRNS,
-                         KC_LEFT, KC_DOWN,  KC_UP,    KC_RIGHT,  KC_TRNS,
+       KC_TRNS, KC_MINS,  KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
+                KC_EQL, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_1,   KC_2,     KC_3,     KC_SLASH,  KC_TRNS,
+                         KC_TRNS, KC_DOT,  KC_TRNS,    KC_TRNS,  KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
@@ -219,6 +220,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     }
   ,[CT_RBP] = ACTION_TAP_DANCE_DOUBLE (KC_RPRN, KC_RBRC)
   ,[CT_PGE] = ACTION_TAP_DANCE_DOUBLE (KC_PGDN, KC_PGUP)
+  ,[CT_F2] = ACTION_TAP_DANCE_DOUBLE (KC_2, KC_F2)
   ,[CT_F4] = ACTION_TAP_DANCE_DOUBLE (KC_4, KC_F4)
   ,[CT_F5] = ACTION_TAP_DANCE_DOUBLE (KC_5, KC_F5)
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
