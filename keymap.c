@@ -17,6 +17,15 @@ enum custom_keycodes {
   VRSN,
 };
 
+/* Fn keys */
+
+enum {
+  F_BSE = 0,
+  F_SFT,
+  F_ALT,
+  F_CTRL
+};
+
 /* Custom keycodes */
 
 enum {
@@ -31,49 +40,50 @@ enum {
   CT_F5,
   CT_PGE,
   CT_NAV,
+  CT_UNDER,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | \ / |  |   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |   =/+  |
+ * | ESC    |   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |  \ / | |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   -    |
+ * |ShiftTab|   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   =/+  |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
- * |Tb/SftTb|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
+ * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
  * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------|
- * |        |  Z   |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  | Enter  |
+ * |        |  Z   |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      | Alt  | Ctrl | SYMB |                                       | MVMNT| Ctrl | Alt  |      |      |
+ *   |      |      | Alt  | Ctrl | SYMB |                                       | MVMNT| Ctrl | Alt  |      | RESET |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | LAlt |  Del |       | RESET| App  |
+ *                                        | LAlt |      |       |      |  Del |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Ctrl |       |      |        |      |
- *                                 | Space|      |------|       |------| Enter  | BkSp |
- *                                 |      |Shift | ESC  |       | LGui |        |      |
+ *                                 | Space|Shift |------|       |------| Enter  | BkSp |
+ *                                 |      |      |      |       | LGui |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_BSLS,        KC_1,      TD(CT_F2),   KC_3,   TD(CT_F4),   TD(CT_F5),   LGUI(KC_L),
-        KC_DELT,          KC_Q,      KC_W,   KC_F,   KC_P,   KC_G,   TD(CT_LBP),
-        TD(CT_SHIFTAB),      KC_A,      KC_R,   KC_S,   KC_T,   KC_D,
-        KC_NO,       KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   TD(CT_PGE),
-        KC_NO,         KC_NO,      KC_LALT,KC_LCTRL,TT(SYMB),
-                                                              KC_LALT,       KC_DELT,
-                                                                             KC_LCTRL,
-                                                    KC_SPC, KC_LSHIFT,TD(CT_ESCF4),
+        TD(CT_ESCF4),       KC_1,      TD(CT_F2),KC_3,      TD(CT_F4),  TD(CT_F5),   LGUI(KC_L),
+        LSFT(KC_TAB),       KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
+        TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
+        KC_NO,              KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
+        KC_NO,              KC_NO,     KC_LALT,  KC_LCTRL,  TT(SYMB),
+                                                                         F(F_ALT),  KC_NO,
+                                                                                     F(F_CTRL),
+                                                            KC_SPC,     KC_LSHIFT,   KC_NO,
         // right hand
-             ALTG(KC_DELT),  KC_6,   KC_7,  KC_8,   KC_9,    KC_0,               KC_EQL,
-             TD(CT_RBP),     KC_J,   KC_L,  KC_U,   KC_Y,   TD(CT_COL),             KC_MINS,
-                             KC_H,   KC_N,  KC_E,   KC_I,   KC_O,                KC_QUOT,
-             TD(CT_NAV),          KC_K,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,             KC_ENT,
-                                    TT(MVMNT), KC_LCTRL,  KC_LALT,  KC_NO,            KC_NO,
-             RESET,           KC_APPLICATION,
+             ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
+             TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
+                             KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
+             TD(CT_NAV),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
+                                     TT(MVMNT),KC_LCTRL,  KC_LALT,  KC_NO,              RESET,
+             KC_NO,           KC_DELT,
              KC_NO,
              KC_LGUI,         KC_ENT, KC_BSPC
     ),
@@ -83,45 +93,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------.           ,-----------------------------------------------------.
  * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
  * |-----------+------+------+------+------+-------------|           |------+------+------+------+------+------+-----------|
- * |           |MwhlL |MwhlD | MwhlU| MwhlR|      |      |           |      |      | Msp2 | Msp0 | Msp1 |      |           |
- * |-----------+------+------+------+------+------| PgUp |           |      |------+------+------+------+------+-----------|
- * |           |MsLeft|MsDown| MsUp |MsRght|      |------|           |------|      | Left | Down | Up   |  Rght|           |
- * |-----------+------+------+------+------+------| PgDn |           |      |------+------+------+------+------+-----------|
- * |           |Ctrl+z|Ctrl+x|Ctrl+c|Ctrl+v|      |      |           |      |      |      |      |      |      |           |
+ * |           |      | MsUp |      |      |      |      |           |      |      | Msp2 | Msp0 | Msp1 |      |           |
+ * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
+ * |           |MsLeft|MsDown|MsRght|      |      |------|           |------|      | Left | Down | Up   | Rght |           |
+ * |-----------+------+------+------+------+------|      |           |Rclk  |------+------+------+------+------+-----------|
+ * |           |Ctrl+z|Ctrl+x|Ctrl+c|Ctrl+v|      |      |           |      |      | MwhlL|MwhlD |MwhlU | MwhlR|           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      |      |      |                                       |      |      |      |      |      |
+ *      |      |      |      |      |Lclk  |                                       |      |      |      |      |      |
  *      `----------------------------------'                                       `----------------------------------'
  *                                         ,-------------.           ,-------------.
  *                                         |      |      |           |      |      |
  *                                  ,------|------|------|           |------+------+------.
- *                                  |      |      |      |           |      |Ctrl+  |      |
- *                                  | Rclk |Shift |------|           |------|Shift  | Lclk |
- *                                  |      | Tab  | ESC  |           | GUI  |  Enter|      |
+ *                                  | Ctrl+|      |      |           |      |      |      |
+ *                                  | Shift|      |------|           |------|      |      |
+ *                                  |/Space|      |      |           |      |      |      |
  *                                  `--------------------'           `--------------------'
  */
 
 [MVMNT] = LAYOUT_ergodox(
 // left hand
- KC_TRNS ,KC_TRNS          ,KC_TRNS         ,KC_TRNS          ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_MS_WH_LEFT    ,KC_MS_WH_DOWN   ,KC_MS_WH_UP       ,KC_MS_WH_RIGHT    ,KC_TRNS    ,KC_PGUP
-,KC_TRNS ,KC_MS_L          ,KC_MS_D         ,KC_MS_U          ,KC_MS_R    ,KC_TRNS
-,KC_TRNS ,LCTL(KC_Z)       ,LCTL(KC_X)      ,LCTL(KC_C)       ,LCTL(KC_V) ,KC_TRNS    ,KC_PGDN
-,KC_TRNS ,KC_TRNS         ,KC_TRNS         ,KC_TRNS          ,KC_TRNS
+ KC_TRNS ,KC_TRNS     ,KC_TRNS         ,KC_TRNS          ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,KC_TRNS     ,KC_MS_U         ,KC_TRNS          ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,KC_MS_L     ,KC_MS_D         ,KC_MS_R          ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,LCTL(KC_Z)  ,LCTL(KC_X)      ,LCTL(KC_C)       ,LCTL(KC_V) ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,KC_TRNS     ,KC_TRNS         ,KC_TRNS          ,KC_BTN1
 
-                                             ,KC_TRNS ,KC_TRNS
-                                                      ,KC_TRNS
-                                    ,KC_BTN2  ,RSFT_T(KC_TAB) ,TD(CT_ESCF4)
+                                                                        ,KC_TRNS ,KC_TRNS
+                                                                                 ,KC_TRNS
+                                                      ,C_S_T(KC_SPC)  ,KC_TRNS, KC_TRNS
 
                                                                 // right hand
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_MS_ACCEL2 ,KC_MS_ACCEL0   ,KC_MS_ACCEL1  ,KC_TRNS ,KC_TRNS
-                                                                        ,KC_TRNS ,KC_LEFT ,KC_DOWN ,KC_UP ,KC_RGHT ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                                                 ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
+                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS       ,KC_TRNS       ,KC_TRNS          ,KC_TRNS ,KC_TRNS
+                                                               ,KC_TRNS ,KC_TRNS ,KC_MS_ACCEL2  ,KC_MS_ACCEL0  ,KC_MS_ACCEL1     ,KC_TRNS ,KC_TRNS
+                                                                        ,KC_TRNS ,KC_LEFT       ,KC_DOWN       ,KC_UP            ,KC_RGHT   ,KC_TRNS
+                                                               ,KC_BTN2 ,KC_TRNS ,KC_MS_WH_LEFT ,KC_MS_WH_DOWN ,KC_MS_WH_UP      ,KC_MS_WH_RIGHT ,KC_TRNS
+                                                                                 ,KC_TRNS       ,KC_TRNS       ,KC_TRNS          ,KC_TRNS ,KC_TRNS
 
                                                                ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS
-                                                               ,KC_LGUI ,C_S_T(KC_ENT) ,KC_BTN1
+                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS
     ),
 
 /* Keymap 1: Symbol Layer
@@ -158,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
                                KC_TRNS,KC_TRNS,KC_TRNS,
-       // right hand 
+       // right hand
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
        KC_TRNS, KC_MINS,  KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
                 KC_EQL, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
@@ -211,8 +221,15 @@ static void ang_tap_dance_ta_reset (qk_tap_dance_state_t *state, void *user_data
 }
 
 
+//const uint16_t PROGMEM fn_actions[] = {
+//    [1] = ACTION_LAYER_TAP_TOGGLE(BASE)                // FN1 - Momentary Layer 1 (Symbols)
+//};
+
 const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_TAP_TOGGLE(BASE)                // FN1 - Momentary Layer 1 (Symbols)
+   [F_BSE]  = ACTION_LAYER_CLEAR(ON_PRESS)
+  ,[F_SFT]  = ACTION_MODS_ONESHOT (MOD_LSFT)
+  ,[F_ALT]  = ACTION_MODS_ONESHOT (MOD_LALT)
+  ,[F_CTRL] = ACTION_MODS_ONESHOT (MOD_LCTL)
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -230,6 +247,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   ,[CT_F4] = ACTION_TAP_DANCE_DOUBLE (KC_4, KC_F4)
   ,[CT_F5] = ACTION_TAP_DANCE_DOUBLE (KC_5, KC_F5)
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
+  ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LALT(KC_MINS))
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
