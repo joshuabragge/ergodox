@@ -35,6 +35,7 @@ Features:
 * When holding the `Tab`/**Arrow** key, the arrow layer activates while the key is held. Tapping the key produces the normal, `Tab` key. Double-tapping it toggles the **Arrow** layer on until a third tap. Credit [algernon][algernon].
 * Tapping the `:` key once yields `:`, tapping it twice yields `;`. Credit [algernon][algernon].
 * Tapping the `[{(`/`)}]` keys once yields `[` (or `{` when shifted), tapping them twice yields `(`. Credit [algernon][algernon].
+* The Shift, Alt, and Control modifiers are one-shot. When tapped, they are considered active for the next key press only. When double tapped, they toggle on, until a third, single tap sometime later. When held, they act as expected. Credit [algernon][algernon].
 
 ## Movement layer
 
