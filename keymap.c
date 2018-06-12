@@ -24,21 +24,24 @@ enum {
   CT_RBP,
   CT_ESCF4,
   CT_TA,
+  CT_F4,
+  CT_F5,
+  CT_PGE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | \ / |  |   1  |   2  |   3  |   4  |   5  | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |   =/+  |
+ * | \ / |  |   1  |   2  |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |   =/+  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  |   ;  |   -    |
+ * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  |   ;  |   -    |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/MVMT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |  SYMB  |  Z   |   X  |   C  |   V  |   B  |      |           |      |   K  |   M  |   ,  |   .  |   /  | Enter  |
+ * |--------+------+------+------+------+------| PgDwn|           |      |------+------+------+------+------+--------|
+ * |        |  Z   |   X  |   C  |   V  |   B  | PgUp |           |      |   K  |   M  |   ,  |   .  |   /  | Enter  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |  Del | Alt  | Ctrl |                                       |      |      |      | MVMNT | SYMB |
+ *   |      |      | Alt  | Ctrl | SYMB |                                       | MVMNT|      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | LAlt |  Del |       | RESET|      |
@@ -52,11 +55,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_BSLS,        KC_1,      KC_2,   KC_3,   KC_4,   KC_5,   LGUI(KC_L),
-        KC_NO,          KC_Q,      KC_W,   KC_F,   KC_P,   KC_G,   TD(CT_LBP),
+        KC_BSLS,        KC_1,      KC_2,   KC_3,   TD(CT_F4),   TD(CT_F5),   LGUI(KC_L),
+        KC_DELT,          KC_Q,      KC_W,   KC_F,   KC_P,   KC_G,   TD(CT_LBP),
         TD(CT_TA),      KC_A,      KC_R,   KC_S,   KC_T,   KC_D,
-        TT(SYMB),       KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   KC_NO,
-        KC_NO,         KC_NO,      KC_DELT,KC_LALT,KC_LCTRL,
+        KC_NO,       KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   TD(CT_PGE),
+        KC_NO,         KC_NO,      KC_LALT,KC_LCTRL,TT(SYMB),
                                                               KC_LALT,       KC_DELT,
                                                                              KC_LCTRL,
                                                     KC_SPC, RSFT_T(KC_TAB),TD(CT_ESCF4),
@@ -65,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TD(CT_RBP),     KC_J,   KC_L,  KC_U,   KC_Y,   KC_SCLN,             KC_MINS,
                              KC_H,   KC_N,  KC_E,   KC_I,   KC_O,                KC_QUOT,
              KC_NO,          KC_K,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,             KC_ENT,
-                                     KC_NO, KC_NO,  KC_NO,  TT(MVMNT),               TT(SYMB),
+                                    TT(MVMNT), KC_NO,  KC_NO,  KC_NO,            KC_NO,
              RESET,           KC_NO,
              KC_NO,
              KC_LGUI,         KC_ENT, KC_BSPC
@@ -215,6 +218,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
       .user_data = (void *)&((td_ta_state_t) { false, false })
     }
   ,[CT_RBP] = ACTION_TAP_DANCE_DOUBLE (KC_RPRN, KC_RBRC)
+  ,[CT_PGE] = ACTION_TAP_DANCE_DOUBLE (KC_PGDN, KC_PGUP)
+  ,[CT_F4] = ACTION_TAP_DANCE_DOUBLE (KC_4, KC_F4)
+  ,[CT_F5] = ACTION_TAP_DANCE_DOUBLE (KC_5, KC_F5)
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
 };
 
