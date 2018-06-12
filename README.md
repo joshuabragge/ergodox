@@ -15,7 +15,7 @@ This is a colemak layout for the [ErgoDox Ez][ergodox-ez]. This is designed for 
     - [Symbols layer](#symbols-layer)
     - [LED states](#led-states)
 * [Building](#building)
-* [Changelog](https://github.com/algernon/ergodox-layout/blob/master/NEWS.md#readme)
+* [Changelog](https://github.com/joshuabragge/ergodox/blob/master/NEWS.md#readme)
 
 # Layouts
 
