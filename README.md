@@ -23,10 +23,10 @@ This is a colemak layout for the [ErgoDox Ez][ergodox-ez]. This is designed for 
 
 [![Base layer](https://github.com/joshuabragge/ergodox/blob/master/images/base-layer.png)](http://www.keyboard-layout-editor.com/#/gists/28f7eb305fdbff943613e1dc7aa9e82b)
 
-This is a Colemak layout, influenced heavily by the greatst keyboard layout thinker of our time, [algernon][algernon] and his [blog][alergnon-blog]
+This is a Colemak layout, influenced heavily by the greatst keyboard layout thinker of our time, [algernon][algernon] and his [blog][blog]
 
 [algernon]: https://github.com/algernon/ergodox-layout
-[algernon-blog]: https://asylum.madhouse-project.org/blog/tags/ergodox/
+[blog]: https://asylum.madhouse-project.org/blog/tags/ergodox/
 
 Features:
 * Tapping the `ESC` key once yields `ESC`. Double-tapping the `ESC` key triggers `ALT`+`F4`,
