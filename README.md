@@ -23,7 +23,7 @@ This is a colemak layout for the [ErgoDox Ez][ergodox-ez]. This is designed for 
 
 [![Base layer](https://github.com/joshuabragge/ergodox/blob/master/images/base-layer.png)](http://www.keyboard-layout-editor.com/#/gists/28f7eb305fdbff943613e1dc7aa9e82b)
 
-This is a Colemak layout, influenced heavily by the greatst keyboard layout thinker of our time, algernon[algernon] and his blog[alergnon-blog]
+This is a Colemak layout, influenced heavily by the greatst keyboard layout thinker of our time, [algernon][algernon] and his [blog][alergnon-blog]
 
 [algernon]: https://github.com/algernon/ergodox-layout
 [algernon-blog]: https://asylum.madhouse-project.org/blog/tags/ergodox/
@@ -32,9 +32,9 @@ Features:
 * Tapping the `ESC` key once yields `ESC`. Double-tapping the `ESC` key triggers `ALT`+`F4`,
 * Dedicated Windows lock button.
 * Dedicated `CTRL`+`ALT`+`DEL` button.
-* When holding the `Tab`/**Arrow** key, the arrow layer activates while the key is held. Tapping the key produces the normal, `Tab` key. Double-tapping it toggles the **Arrow** layer on until a third tap. Credit algernon[algernon].
-* Tapping the `:` key once yields `:`, tapping it twice yields `;`. Credit algernon[algernon].
-* Tapping the `[{(`/`)}]` keys once yields `[` (or `{` when shifted), tapping them twice yields `(`. Credit algernon[algernon].
+* When holding the `Tab`/**Arrow** key, the arrow layer activates while the key is held. Tapping the key produces the normal, `Tab` key. Double-tapping it toggles the **Arrow** layer on until a third tap. Credit [algernon][algernon].
+* Tapping the `:` key once yields `:`, tapping it twice yields `;`. Credit [algernon][algernon].
+* Tapping the `[{(`/`)}]` keys once yields `[` (or `{` when shifted), tapping them twice yields `(`. Credit [algernon][algernon].
 
 The symbols on the front in the image above have the same color as the key that activates them, with the exception of the **Arrow** layer, which is just black on the front.
 
