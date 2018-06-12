@@ -36,8 +36,6 @@ Features:
 * Tapping the `:` key once yields `:`, tapping it twice yields `;`. Credit [algernon][algernon].
 * Tapping the `[{(`/`)}]` keys once yields `[` (or `{` when shifted), tapping them twice yields `(`. Credit [algernon][algernon].
 
-The symbols on the front in the image above have the same color as the key that activates them, with the exception of the **Arrow** layer, which is just black on the front.
-
 ## Movement layer
 
 [![Movement layer](https://github.com/joshuabragge/ergodox/blob/master/images/movement-layer.png)](http://www.keyboard-layout-editor.com/#/gists/45681a17453d235925b6028dd83bf12a)
