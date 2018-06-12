@@ -93,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------.           ,-----------------------------------------------------.
  * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
  * |-----------+------+------+------+------+-------------|           |------+------+------+------+------+------+-----------|
- * |           |      | MsUp |      |      |      |      |           |      |      | Msp2 | Msp0 | Msp1 |      |           |
+ * |           |      |      |MsUp  |      |      |      |           |      |      | Msp2 | Msp0 | Msp1 |      |           |
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |MsLeft|MsDown|MsRght|      |      |------|           |------|      | Left | Down | Up   | Rght |           |
+ * |           |      |MsLeft|MsDown|MsRght|      |------|           |------|      | Left | Down | Up   | Rght |           |
  * |-----------+------+------+------+------+------|      |           |Rclk  |------+------+------+------+------+-----------|
  * |           |Ctrl+z|Ctrl+x|Ctrl+c|Ctrl+v|      |      |           |      |      | MwhlL|MwhlD |MwhlU | MwhlR|           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
@@ -113,8 +113,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [MVMNT] = LAYOUT_ergodox(
 // left hand
  KC_TRNS ,KC_TRNS     ,KC_TRNS         ,KC_TRNS          ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS     ,KC_MS_U         ,KC_TRNS          ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_MS_L     ,KC_MS_D         ,KC_MS_R          ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,KC_TRNS     ,KC_TRNS         ,KC_MS_U          ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,KC_TRNS     ,KC_MS_L         ,KC_MS_D          ,KC_MS_R    ,KC_TRNS
 ,KC_TRNS ,LCTL(KC_Z)  ,LCTL(KC_X)      ,LCTL(KC_C)       ,LCTL(KC_V) ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS     ,KC_TRNS         ,KC_TRNS          ,KC_BTN1
 
@@ -247,7 +247,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   ,[CT_F4] = ACTION_TAP_DANCE_DOUBLE (KC_4, KC_F4)
   ,[CT_F5] = ACTION_TAP_DANCE_DOUBLE (KC_5, KC_F5)
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
-  ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LALT(KC_MINS))
+  ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LSFT(KC_MINS))
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
