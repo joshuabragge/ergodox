@@ -43,7 +43,7 @@ Features:
 
 Features:
 * VIM like arrow keys over home row.
-* VIM like mouse keys over home row.
+* WASD mouse control (VIM like mouse control is extremely difficult)
 * Copy, paste, cut and undo buttons.
 * Mousewheel buttons
 
