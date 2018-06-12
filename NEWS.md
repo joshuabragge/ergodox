@@ -1,6 +1,26 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
-## v1.1
+## v1.3
+
+*2018-06-11*
+
+### Base
+* Removed double tap `TAB` for `ALT`+`TAB`. The double tap was not fast enough when being used multiple times in a row.
+* Added a dedicated `ALT`+`TAB` button to replace `DEL` button. 
+* Added movement layer back to `TAB`.
+* Removed `ENTER` on the right hand pinky.
+* Moved `\` to the right hand as to keep all the punctuation and symbols together.
+* Reorganized punctuation so most used is easier to reach.
+* Added tap for `-` double tap for `_`.
+
+### Movement
+* Moved `CTRL`+`SHIFT` key to the other side so it is possible to hold movement layer key while highlighting text with arrows.
+* Reverted VIM mouse keys to WASD keys because layout was just too difficult to adjust to.
+* Moved mouse wheel buttons to right hand to be consistent with VIM layout.
+* Moved mouse click buttons so they are not blocking other usefuly keys on the base layer for navigation
+
+
+## v1.2
 
 *2018-04-24*
 * Increased mouse speed from 2 to 5.
@@ -12,7 +32,7 @@
 * Added web page navigation keys.
 * Duplicated `CTRL` and `ALT` keys so they are accessable by both thumb keys.
 
-## v1.01
+## v1.1
 
 *2018-04-23*
 
