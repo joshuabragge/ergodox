@@ -1,5 +1,16 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.4
+
+*2018-06-17
+
+### Base
+* Moved the del key so it is more accessable by the thumb
+* Moved the alt key because it was being unused
+
+### Qwerty 
+* Added qwerty layer
+
 ## v1.3
 
 *2018-06-11*
