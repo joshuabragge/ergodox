@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "debug.h"
 #include "action_layer.h"
+#include "keymap_plover.h"
 #include "version.h"
 
 /* Layers */
@@ -9,7 +10,8 @@ enum {
   BASE = 0,
   MVMNT,
   SYMB,
-  QWERT
+  QWERT,
+  PLVR
 };
 
 
@@ -59,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |      |      | Alt  | Ctrl | SYMB |                                       | MVMNT| Ctrl | Alt  |      | RESET |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |      |      |       | QWERT|      |
+ *                                        |      | PLVR |       | QWERT|      |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Ctrl |       | LAlt |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
@@ -75,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
         KC_NO,              KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
         KC_NO,              KC_NO,     F(F_ALT),  F(F_CTRL),  TT(SYMB),
-                                                                          KC_NO,     KC_NO,
+                                                                          KC_NO,     TT(PLVR),
                                                                                      F(F_CTRL),
                                                             KC_SPC,     KC_LSHIFT,   KC_DELT,
         // right hand
@@ -226,6 +228,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS
 ),
 
+
+/* Keymap 6: Steno for Plover
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * |        |   #  |   #  |   #  |   #  |   #  |   #  |           |  #   |  #   |  #   |   #  |   #  |  #   |   #    |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |   T  |   P  |   H  |      |------|           |------|      |  F   |   P  |   L  |  T   |   D    |
+ * |--------+   S  +------+------+------+   *  |   *  |           |  *   |  *   +------+------+------+------+--------|
+ * |        |      |   K  |   W  |   R  |      |      |           |      |      |  R   |   B  |   G  |  S   |   Z    |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                       |      |      |      |      |      |
+ *   `----------------------------------'                                       `----------------------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |   A  |   O  |------|       |------|  E   |  U   |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
+ */
+
+[PLVR] = LAYOUT_ergodox(
+// left hand
+KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,   KC_NO,
+KC_NO,  PV_NUM, PV_NUM, PV_NUM,  PV_NUM, PV_NUM,  PV_NUM,
+KC_NO,  PV_LS,  PV_LT,  PV_LP,   PV_LH,  PV_STAR,
+KC_NO,  PV_LS,  PV_LK,  PV_LW,   PV_LR,  PV_STAR, PV_STAR,
+KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,
+                                           KC_NO, KC_TRNS,
+                                           KC_NO,
+                                           PV_A,  PV_O,  KC_NO,
+
+                                                 // right hand
+                                                 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                                                 PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,  PV_NUM,
+                                                          PV_STAR, PV_RF,   PV_RP,   PV_RL,   PV_RT,   PV_RD,
+                                                 PV_STAR, PV_STAR, PV_RR,   PV_RB,   PV_RG,   PV_RS,   PV_RZ,
+                                                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                                           KC_NO,      KC_NO,
+                                           KC_NO,
+                                           KC_NO,PV_E, PV_U
+ ),
+
 };
 
 #define TAP_ONCE(code)  \
@@ -357,8 +404,14 @@ void matrix_scan_user(void) {
       } else if (layer == QWERT) {
         ergodox_right_led_3_on();
         ergodox_right_led_3_set (LED_BRIGHTNESS_LO);
-      }
-      else {
+      } else if (layer == PLVR) {
+        ergodox_right_led_1_on();
+        ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
+        ergodox_right_led_2_on();
+        ergodox_right_led_2_set (LED_BRIGHTNESS_LO);
+        ergodox_right_led_3_on();
+        ergodox_right_led_3_set (LED_BRIGHTNESS_LO);
+      } else {
        ergodox_right_led_3_off();
        ergodox_right_led_2_off();
        ergodox_right_led_1_off();

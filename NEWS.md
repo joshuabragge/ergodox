@@ -8,8 +8,14 @@
 * Moved the del key so it is more accessable by the thumb
 * Moved the alt key because it was being unused
 
+### Movement
+* Lowered mouse movement speed
+
 ### Qwerty 
 * Added qwerty layer
+
+### Plover
+* Added plover layer
 
 ## v1.3
 
