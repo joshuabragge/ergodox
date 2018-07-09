@@ -5,7 +5,9 @@
 *2018-07-08
 
 ### Base
-* Removed CTRL and ALT from right side of keyboard due to infrequency of use
+* Removed CTRL and ALT from right side of keyboard due to infrequency of use.
+* Moved the symbol layer to the right hand key.
+* Replaced the symbol layer on the left hand with the number pad key.
 
 ### Number
 * Moved number pad layout out from symbol.
