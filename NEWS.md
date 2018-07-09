@@ -14,7 +14,6 @@
 * Reorganized thumb clusters - added `INS` and `Application` buttons.
 * Added sudo Swap Hands function (will revist the QMK functionality in the future).
 * Added `LEAD` key to right hand thumb cluster and moved `LGUI` key over to left thumb cluster.
-	- `LEAD` - `S`+`A`+`V` = `CTRL`+`S`
 	- `LEAD` - `M`+`E`+`H` = `¯\(ツ)_/¯`
 * Removed the TD F5, F2 and F4 from the numbers as focus should be on the symbols layer.
 * Added TD for `CTRL`+letter for `S`, `Z`, `X`, `C`, `V`

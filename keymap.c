@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        LGUI(KC_L),
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
-        TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
-        KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
+        TD(CT_TA),          KC_A,      KC_R,     TD(CT_S),      KC_T,       KC_D,
+        KC_LCTRL,           TD(CT_Z),      TD(CT_X),     TD(CT_C),      TD(CT_V),       KC_B,        TD(CT_PGE),
         KC_NO,              KC_NO,     KC_NO,   TT(SWPHND),  TT(NMBR),
                                                                           F(F_ALT),     KC_INS,
                                                                                      F(F_CTRL),
@@ -519,22 +519,6 @@ void matrix_scan_user(void) {
   LEADER_DICTIONARY() {
         leading = false;
         leader_end();
-
-        // for single key sequences
-        //SEQ_ONE_KEY(KC_XXXX) {
-            // INSERT CODE HERE: anything you can do in a macro https://docs.qmk.fm/macros.html
-        //}
-
-        // for two-key sequences
-        //SEQ_TWO_KEYS(KC_XXXX, KC_YYYY) {
-            // INSERT CODE HERE: anything you can do in a macro https://docs.qmk.fm/macros.html
-        //}
-
-        SEQ_THREE_KEYS(KC_S, KC_A, KC_V) {
-            // Lead S-A-V is CTRL+S
-            register_code(LCTL(KC_S));
-            unregister_code(LCTL(KC_S));
-        }
 
         SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
           SEND_STRING("¯\(ツ)_/¯");
