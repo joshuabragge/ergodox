@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
  * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| 
- * |  Ctrl  |Z/ctlZ|X/ctlX|C/ctlC|V/ctlV|   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |  Ctrl  |  Z   |  X   |  C   |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |SWPHND| NMBR |                                       | MVMNT| SYMB |      |      | RESET |
  *   `----------------------------------'                                       `----------------------------------'
@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        LGUI(KC_L),
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
-        TD(CT_TA),          KC_A,      KC_R,     TD(CT_S),      KC_T,       KC_D,
-        KC_LCTRL,           TD(CT_Z),      TD(CT_X),     TD(CT_C),      TD(CT_V),       KC_B,        TD(CT_PGE),
+        TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
+        KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
         KC_NO,              KC_NO,     KC_NO,   TT(SWPHND),  TT(NMBR),
                                                                           F(F_ALT),     KC_INS,
                                                                                      F(F_CTRL),
@@ -499,10 +499,22 @@ void matrix_scan_user(void) {
       } else if (layer == SYMB) {
         ergodox_right_led_1_on();
         ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
+      } else if (layer == NMBR) {
+        ergodox_right_led_3_on();
+        ergodox_right_led_3_set (LED_BRIGHTNESS_LO);
       } else if (layer == QWERT) {
         ergodox_right_led_3_on();
         ergodox_right_led_3_set (LED_BRIGHTNESS_LO);
+        ergodox_right_led_1_on();
+        ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
       } else if (layer == PLVR) {
+        ergodox_right_led_1_on();
+        ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
+        ergodox_right_led_2_on();
+        ergodox_right_led_2_set (LED_BRIGHTNESS_LO);
+        ergodox_right_led_3_on();
+        ergodox_right_led_3_set (LED_BRIGHTNESS_LO);
+      } else if (layer == SWPHND) {
         ergodox_right_led_1_on();
         ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
         ergodox_right_led_2_on();
@@ -516,12 +528,13 @@ void matrix_scan_user(void) {
      }
 
 
+
   LEADER_DICTIONARY() {
         leading = false;
         leader_end();
 
         SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
-          SEND_STRING("¯\(ツ)_/¯");
+          SEND_STRING("¯|(ツ)_/¯");
         }
    
       }

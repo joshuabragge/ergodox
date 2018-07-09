@@ -5,6 +5,12 @@
 *2018-07-08*
 
 ### Base
+* Removed TD for `CTRL`+letter for `S`, `Z`, `X`, `C`, `V`. Makes typing words like `PROCESSING` difficult.
+* Added layer LED colours.
+
+*2018-07-08*
+
+### Base
 * Removed `CTRL` and `ALT` from right side of keyboard due to infrequency of use.
 * Moved the symbol layer to the right hand key.
 * Replaced the symbol layer on the left hand with the number pad key.
