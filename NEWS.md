@@ -2,20 +2,28 @@
 
 ## v1.4
 
+*2018-07-08
+
+## Number
+* Moved number pad layout out from symbol.
+
+## Symbols
+* Moved the stacked symbols on the left hand to the right.
+
 *2018-06-17
 
 ### Base
-* Moved the del key so it is more accessable by the thumb
-* Moved the alt key because it was being unused
+* Moved the del key so it is more accessable by the thumb.
+* Moved the alt key because it was being unused.
 
 ### Movement
-* Lowered mouse movement speed
+* Lowered mouse movement speed.
 
 ### Qwerty 
-* Added qwerty layer
+* Added qwerty layer.
 
 ### Plover
-* Added plover layer
+* Added plover layer.
 
 ## v1.3
 
