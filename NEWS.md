@@ -12,8 +12,10 @@
 * Replaced tap `CTRL` on left hand with regular `CTRL` due to issues with accidental taps.
 * Removed `SHIFT`+`TAB` due to the button not working reliabily through virtual machines and moved `DEL` over.
 * Reorganized thumb clusters - added `INS` and `Application` buttons.
-* Added `LEAD` key to right hand thumb cluster and moved `LGUI` key over to left thumb cluster.
 * Added sudo Swap Hands function (will revist the QMK functionality in the future).
+* Added `LEAD` key to right hand thumb cluster and moved `LGUI` key over to left thumb cluster.
+	- `LEAD` - `S`+`A`+`V` = `CTRL`+`S`
+	- `LEAD` - `M`+`E`+`H` = `¯\(ツ)_/¯`
 
 
 ### Number

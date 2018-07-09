@@ -485,6 +485,8 @@ void matrix_init_user(void) {
 #endif
 };
 
+LEADER_EXTERNS();
+
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
   uint8_t layer = biton32(layer_state);
@@ -509,4 +511,31 @@ void matrix_scan_user(void) {
        ergodox_right_led_2_off();
        ergodox_right_led_1_off();
      }
-  };
+
+
+  LEADER_DICTIONARY() {
+        leading = false;
+        leader_end();
+
+        // for single key sequences
+        //SEQ_ONE_KEY(KC_XXXX) {
+            // INSERT CODE HERE: anything you can do in a macro https://docs.qmk.fm/macros.html
+        //}
+
+        // for two-key sequences
+        //SEQ_TWO_KEYS(KC_XXXX, KC_YYYY) {
+            // INSERT CODE HERE: anything you can do in a macro https://docs.qmk.fm/macros.html
+        //}
+
+        SEQ_THREE_KEYS(KC_S, KC_A, KC_V) {
+            // Lead S-A-V is CTRL+S
+            register_code(LCTL(KC_S));
+            unregister_code(LCTL(KC_S));
+        }
+
+        SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
+          SEND_STRING("¯\(ツ)_/¯");
+        }
+   
+      }
+    };
