@@ -37,28 +37,29 @@ enum {
   CT_LBP,
   CT_RBP,
   CT_ESCF4,
-  CT_SHIFTAB,
   CT_COL,
   CT_TA,
-  CT_F2,
-  CT_F4,
-  CT_F5,
   CT_PGE,
   CT_NAV,
   CT_UNDER,
+  CT_S,
+  CT_Z,
+  CT_X,
+  CT_C,
+  CT_V,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- *|ESC/AltF4|   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |  \ / | |
+ *|ESC/AltF4|   1  |  2   |   3  |   4  |   5  | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |  \ / | |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   =/+  |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
- * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| KC_LCTRL KC_LALT
- * |  Ctrl  |   Z  |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| 
+ * |  Ctrl  |Z/ctlZ|X/ctlX|C/ctlC|V/ctlV|   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |SWPHND| NMBR |                                       | MVMNT| SYMB |      |      | RESET |
  *   `----------------------------------'                                       `----------------------------------'
@@ -74,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        TD(CT_ESCF4),       KC_1,      TD(CT_F2),KC_3,      TD(CT_F4),  TD(CT_F5),   LGUI(KC_L),
+        TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        LGUI(KC_L),
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
         KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
@@ -428,13 +429,15 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   ,[CT_RBP] = ACTION_TAP_DANCE_DOUBLE (KC_RPRN, KC_RBRC)
   ,[CT_PGE] = ACTION_TAP_DANCE_DOUBLE (KC_PGDN, KC_PGUP)
   ,[CT_NAV] = ACTION_TAP_DANCE_DOUBLE (KC_WBAK, KC_WFWD)
-  ,[CT_SHIFTAB] = ACTION_TAP_DANCE_DOUBLE (KC_TAB, LSFT(KC_TAB))
   ,[CT_COL] = ACTION_TAP_DANCE_DOUBLE (KC_SCLN, LSFT(KC_COLN))
-  ,[CT_F2] = ACTION_TAP_DANCE_DOUBLE (KC_2, KC_F2)
-  ,[CT_F4] = ACTION_TAP_DANCE_DOUBLE (KC_4, KC_F4)
-  ,[CT_F5] = ACTION_TAP_DANCE_DOUBLE (KC_5, KC_F5)
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
   ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LSFT(KC_MINS))
+
+  ,[CT_S] = ACTION_TAP_DANCE_DOUBLE (KC_S, LCTL(KC_S))
+  ,[CT_Z] = ACTION_TAP_DANCE_DOUBLE (KC_Z, LCTL(KC_Z))
+  ,[CT_X] = ACTION_TAP_DANCE_DOUBLE (KC_X, LCTL(KC_X))
+  ,[CT_C] = ACTION_TAP_DANCE_DOUBLE (KC_C, LCTL(KC_C))
+  ,[CT_V] = ACTION_TAP_DANCE_DOUBLE (KC_V, LCTL(KC_V))
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
