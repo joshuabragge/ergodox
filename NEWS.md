@@ -12,12 +12,21 @@
 * Replaced tap `CTRL` on left hand with regular `CTRL` due to issues with accidental taps.
 * Removed `SHIFT`+`TAB` due to the button not working reliabily through virtual machines and moved `DEL` over.
 * Reorganized thumb clusters - added `INS` and `Application` buttons.
+* Added `LEAD` key to right hand thumb cluster and moved `LGUI` key over to left thumb cluster.
+* Added sudo Swap Hands function (will revist the QMK functionality in the future).
+
 
 ### Number
 * Moved number pad layout out from symbol.
 
 ### Symbols
 * Moved the stacked symbols on the left hand to the right.
+
+### Movement
+* Moved right click button to more accessable and logical location near the left thumb.
+* Removed dedicated copy paste due to infrequency of use.
+* Added `HOME` and `END` for navigation purposes on the right hand near the arrow keys.
+* Removed `KC_MS_ACCEL1` due to infrequency of use.
 
 ## v1.4
 
