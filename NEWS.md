@@ -2,12 +2,13 @@
 
 ## v1.5
 
-*2018-07-08
+*2018-07-08*
 
 ### Base
 * Removed CTRL and ALT from right side of keyboard due to infrequency of use.
 * Moved the symbol layer to the right hand key.
 * Replaced the symbol layer on the left hand with the number pad key.
+* Removed thumb LALT due to number of accidential hits and infrequency of use. 
 
 ### Number
 * Moved number pad layout out from symbol.
@@ -17,7 +18,7 @@
 
 ## v1.4
 
-*2018-06-17
+*2018-06-17*
 
 ### Base
 * Moved the del key so it is more accessable by the thumb.

@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | ESC    |   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |  \ / | |
+ *|ESC/AltF4|   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |  \ / | |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |ShiftTab|   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   =/+  |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
@@ -59,10 +59,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| KC_LCTRL KC_LALT
  * |        |   Z  |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      | Alt  | Ctrl | NMBR |                                       | MVMNT| SYMB |      |      | RESET |
+ *   |      |      |      | Ctrl | NMBR |                                       | MVMNT| SYMB |      |      | RESET |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |      | PLVR |       | QWERT|      |
+ *                                        | LAlt | PLVR |       | QWERT|      |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Ctrl |       | LAlt |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LSFT(KC_TAB),       KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
         KC_NO,              KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
-        KC_NO,              KC_NO,     F(F_ALT),  F(F_CTRL),  TT(SYMB),
-                                                                          KC_NO,     TT(PLVR),
+        KC_NO,              KC_NO,     KC_NO,  F(F_CTRL),  TT(SYMB),
+                                                                          F(F_ALT),     TT(PLVR),
                                                                                      F(F_CTRL),
                                                             KC_SPC,     KC_LSHIFT,   KC_DELT,
         // right hand
