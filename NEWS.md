@@ -5,10 +5,13 @@
 *2018-07-08*
 
 ### Base
-* Removed CTRL and ALT from right side of keyboard due to infrequency of use.
+* Removed `CTRL` and `ALT` from right side of keyboard due to infrequency of use.
 * Moved the symbol layer to the right hand key.
 * Replaced the symbol layer on the left hand with the number pad key.
-* Removed thumb LALT due to number of accidential hits and infrequency of use. 
+* Removed thumb `LALT` due to number of accidential hits and infrequency of use. 
+* Replaced tap `CTRL` on left hand with regular `CTRL` due to issues with accidental taps.
+* Removed `SHIFT`+`TAB` due to the button not working reliabily through virtual machines and moved `DEL` over.
+* Reorganized thumb clusters - added `INS` and `Application` buttons.
 
 ### Number
 * Moved number pad layout out from symbol.
@@ -21,8 +24,8 @@
 *2018-06-17*
 
 ### Base
-* Moved the del key so it is more accessable by the thumb.
-* Moved the alt key because it was being unused.
+* Moved the `DEL` key so it is more accessable by the thumb.
+* Moved the `LALT` key because it was being unused.
 
 ### Movement
 * Lowered mouse movement speed.

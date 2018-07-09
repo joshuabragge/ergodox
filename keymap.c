@@ -12,7 +12,7 @@ enum {
   SYMB,
   NMBR,
   QWERT,
-  PLVR
+  PLVR,
 };
 
 
@@ -53,20 +53,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  *|ESC/AltF4|   1  | 2/F2 |   3  | 4/F4 | 5/F5 | GUI+L|    | ctrl+alt+del|   6  |   7  |   8  |   9  |   0  |  \ / | |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |ShiftTab|   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   =/+  |
+ * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |   =/+  |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |  '     |
  * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| KC_LCTRL KC_LALT
- * |        |   Z  |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |  Ctrl  |   Z  |   X  |   C  |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      | Ctrl | NMBR |                                       | MVMNT| SYMB |      |      | RESET |
+ *   |      |      |      |      | NMBR |                                       | MVMNT| SYMB |      |      | RESET |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | LAlt | PLVR |       | QWERT|      |
+ *                                        |LAlt  | Ins  |       |QWERT | PLVR |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      | Ctrl |       | LAlt |        |      |
+ *                                 |      |      | Ctrl |       | Appl |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
- *                                 |      |      | Del  |       | LGui |        |      |
+ *                                 |      |      |      |       | LGui |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -74,21 +74,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
         TD(CT_ESCF4),       KC_1,      TD(CT_F2),KC_3,      TD(CT_F4),  TD(CT_F5),   LGUI(KC_L),
-        LSFT(KC_TAB),       KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
+        KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
-        KC_NO,              KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
-        KC_NO,              KC_NO,     KC_NO,  F(F_CTRL),  TT(SYMB),
-                                                                          F(F_ALT),     TT(PLVR),
+        KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
+        KC_NO,              KC_NO,     KC_NO,   KC_NO,  TT(NMBR),
+                                                                          F(F_ALT),     KC_INS,
                                                                                      F(F_CTRL),
-                                                            KC_SPC,     KC_LSHIFT,   KC_DELT,
+                                                            KC_SPC,     KC_LSHIFT,   KC_NO,
         // right hand
              ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
              TD(CT_NAV),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
                                      TT(MVMNT),TT(SYMB),  KC_NO,  KC_NO,              RESET,
-             TT(QWERT),           KC_NO,
-             F(F_ALT),
+             TT(QWERT),           TT(PLVR),
+             KC_APP,
              KC_LGUI,         KC_ENT, KC_BSPC
     ),
 
