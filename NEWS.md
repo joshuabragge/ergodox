@@ -1,14 +1,19 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
-## v1.4
+## v1.5
 
 *2018-07-08
 
-## Number
+### Base
+* Removed CTRL and ALT from right side of keyboard due to infrequency of use
+
+### Number
 * Moved number pad layout out from symbol.
 
-## Symbols
+### Symbols
 * Moved the stacked symbols on the left hand to the right.
+
+## v1.4
 
 *2018-06-17
 
