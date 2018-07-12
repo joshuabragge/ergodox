@@ -47,7 +47,7 @@ Features:
 * VIM like arrow keys over home row.
 * Easy access to home and end buttons (actually extremely useful for navigating).
 * WASD mouse control.
-* Mousewheel buttons
+* Mousewheel buttons.
 
 ## Symbols layer
 
