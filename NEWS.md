@@ -2,6 +2,11 @@
 
 ## v1.5
 
+*2018-07-11*
+
+### Plover
+* Unblocked the PLOVER key such that you can now exit PLOVER layout by tapping the entry button.
+
 *2018-07-08*
 
 ### Base
