@@ -534,7 +534,13 @@ void matrix_scan_user(void) {
         leader_end();
 
         SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
-          SEND_STRING("¯|(ツ)_/¯");
+          unicode_input_start(); register_hex(0xaf); unicode_input_finish();
+          TAP_ONCE (KC_BSLS);
+          register_code (KC_RSFT); TAP_ONCE (KC_MINS); TAP_ONCE (KC_9); unregister_code (KC_RSFT);
+          unicode_input_start (); register_hex(0x30c4); unicode_input_finish();
+          register_code (KC_RSFT); TAP_ONCE (KC_0); TAP_ONCE (KC_MINS); unregister_code (KC_RSFT);
+          TAP_ONCE (KC_SLSH);
+          unicode_input_start (); register_hex(0xaf); unicode_input_finish();
         }
    
       }

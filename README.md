@@ -38,6 +38,8 @@ Features:
 * Tapping the `:` key once yields `:`, tapping it twice yields `;` - credit [algernon][algernon].
 * Tapping the `[{(`/`)}]` keys once yields `[` (or `{` when shifted), tapping them twice yields `(` - credit [algernon][algernon].
 * The Shift, Alt, and Control modifiers are one-shot. When tapped, they are considered active for the next key press only. When double tapped, they toggle on, until a third, single tap sometime later. When held, they act as expected - credit [algernon][algernon].
+* The Lead key allows typing in sequence of keys and then triggers some actions: 
+    - `LEAD m e h` types `¯\_(ツ)_/¯`
 
 ## Movement layer
 
