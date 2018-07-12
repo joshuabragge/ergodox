@@ -57,7 +57,7 @@ This places the symbols under the home row and the function keys directly above 
 
 ## Numbers layer
 
-[![Numbers layer](https://github.com/joshuabragge/ergodox/blob/master/images/numbers-pad.png)](http://www.keyboard-layout-editor.com/#/gists/de6869b3f510813ffa8c433f077f66e7)
+[![Numbers layer](https://github.com/joshuabragge/ergodox/blob/master/images/numbers-layer.png)](http://www.keyboard-layout-editor.com/#/gists/de6869b3f510813ffa8c433f077f66e7)
 
 This places the symbols under the home row fingers and minimizes the need to hold `SHIFT`+NUM. This idea holds true for the number pad.
 
