@@ -316,7 +316,7 @@ KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,
                                                           PV_STAR, PV_RF,   PV_RP,   PV_RL,   PV_RT,   PV_RD,
                                                  PV_STAR, PV_STAR, PV_RR,   PV_RB,   PV_RG,   PV_RS,   PV_RZ,
                                                                    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                                           KC_NO,      KC_NO,
+                                           KC_NO,      KC_TRNS,
                                            KC_NO,
                                            KC_NO,PV_E, PV_U
  ),
