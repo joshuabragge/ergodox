@@ -40,6 +40,11 @@ Features:
 * The Shift, Alt, and Control modifiers are one-shot. When tapped, they are considered active for the next key press only. When double tapped, they toggle on, until a third, single tap sometime later. When held, they act as expected - credit [algernon][algernon].
 * The Lead key allows typing in sequence of keys and then triggers some actions: 
     - `LEAD m e h` types `¯\_(ツ)_/¯`
+    - `LEAD s c d` types [SCD]
+    - `LEAD j b` types joshua.bragge
+    - `LEAD d b` types joshua.bragge.db
+    - `LEAD s v r` types joshua.bragge.svr
+    - `LEAD t` sends `ALT` + `TAB`
 
 ## Movement layer
 
