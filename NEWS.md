@@ -1,5 +1,10 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.6
+
+*2018-09-09*
+* Changed symbols layer activators from momentarily and toggle layer to just toggle. Button would not switch fast enough when typing frantically.
+
 ## v1.5
 
 *2018-07-11*
