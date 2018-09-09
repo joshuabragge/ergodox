@@ -49,6 +49,14 @@ enum {
   CT_V,
 };
 
+/* Lead Variables */
+
+const char USERNAME[80] = "joshua.bragge";
+const char DB[80] = "joshua.bragge.db";
+const char SVR[80] = "joshua.bragge.svr";
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
@@ -542,6 +550,23 @@ void matrix_scan_user(void) {
           TAP_ONCE (KC_SLSH);
           unicode_input_start (); register_hex(0xaf); unicode_input_finish();
         }
-   
+        SEQ_THREE_KEYS(KC_S, KC_C, KC_D) {
+          SEND_STRING("[SCD]");
+        }
+        SEQ_THREE_KEYS(KC_S, KC_V, KC_R) {
+          send_string(SVR);
+        }
+        SEQ_TWO_KEYS(KC_D, KC_B) {
+          send_string(DB);
+        }
+        SEQ_TWO_KEYS(KC_J, KC_B) {
+          send_string(USERNAME);
+        }    
+        SEQ_ONE_KEY(KC_T) {
+          register_code(KC_LALT);
+          register_code(KC_TAB);
+          unregister_code(KC_TAB);
+          unregister_code(KC_LALT);
+        }
       }
     };

@@ -3,7 +3,13 @@
 ## v1.6
 
 *2018-09-09*
-* Changed symbols layer activators from momentarily and toggle layer to just toggle. Button would not switch fast enough when typing frantically.
+* Changed symbols and number layer activators from momentarily and toggle layer to just toggle. Button would not switch fast enough when typing frantically.
+* Added lead shortcuts
+   - scd --> [SCD]
+   - svr --> joshua.bragge.svr
+   - db --> joshua.bragge.db
+   - jb --> joshua.bragge
+   - t --> alt+tab
 
 ## v1.5
 
