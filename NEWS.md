@@ -2,8 +2,8 @@
 
 ## v1.6
 
-*2018-09-09*
-* Changed symbols and number layer activators from momentarily and toggle layer to just toggle. Button would not switch fast enough when typing frantically.
+*2018-09-10*
+* Changed symbols, number and movement layer activators from momentarily and toggle layer to just toggle. Button would not switch fast enough when typing frantically.
 * Added lead shortcuts
    - scd --> [SCD]
    - svr --> joshua.bragge.svr
