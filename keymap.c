@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
              TD(CT_NAV),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
-                                     MO(MVMNT),TT(SYMB),  KC_NO,  KC_NO,              RESET,
+                                     MO(MVMNT), MO(SYMB),  KC_NO,  KC_NO,              RESET,
              TT(QWERT),           TT(PLVR),
              KC_APP,
              KC_LEAD,         KC_ENT, KC_BSPC
