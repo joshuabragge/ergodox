@@ -9,6 +9,13 @@
 * Added `LEAD` commands:
 	- `LEAD` + `L` = `GUI`+`L` (Lock)
 	- `LEAD` + `U` = `CTRL` + `ALT` + `DEL` (Unlock)
+* Removed mouse movement keys - was not able to abopt it into my workflow no matter how hard I forced it.
+* Added symbols to movement layer.
+* Added function layer for F keys.
+* Moved `GUI` + `L` and `CTRL` + `ALT` + `DEL` buttons down to thumb cluster.
+* Moved around unused thumb cluster keys.
+* Added extra `ALT` and `CTRL` to be accessable by left hand. 
+
 
 ## v1.6
 
