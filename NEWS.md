@@ -6,6 +6,9 @@
 
 * Moved over `0` and `.` on numberpad layer to match planck.
 * Moved around numpad math to align with base layer logic.
+* Added `LEAD` commands:
+	- `LEAD` + `L` = `GUI`+`L` (Lock)
+	- `LEAD` + `U` = `CTRL` + `ALT` + `DEL` (Unlock)
 
 ## v1.6
 

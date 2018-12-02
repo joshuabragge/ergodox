@@ -56,7 +56,6 @@ const char DB[80] = "joshua.bragge.db";
 const char SVR[80] = "joshua.bragge.svr";
 
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
@@ -567,6 +566,16 @@ void matrix_scan_user(void) {
           register_code(KC_TAB);
           unregister_code(KC_TAB);
           unregister_code(KC_LALT);
+        }
+        SEQ_ONE_KEY(KC_U) {
+          register_code(ALTG(KC_DELT));
+          unregister_code(ALTG(KC_DELT));
+        } 
+        SEQ_ONE_KEY(KC_L) {
+          register_code(KC_LGUI);
+          register_code(KC_L);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_L);
         }
       }
     };
