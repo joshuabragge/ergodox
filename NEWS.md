@@ -1,8 +1,16 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.7
+
+*2018-12-02*
+
+* Moved over `0` and `.` on numberpad layer to match planck.
+* Moved around numpad math to align with base layer logic.
+
 ## v1.6
 
 *2018-09-10*
+
 * Changed symbols, number and movement layer activators from momentarily and toggle layer to just toggle. Button would not switch fast enough when typing frantically.
 * Added lead shortcuts
    - scd --> [SCD]
