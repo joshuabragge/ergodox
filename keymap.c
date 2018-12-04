@@ -439,12 +439,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   ,[CT_COL] = ACTION_TAP_DANCE_DOUBLE (KC_SCLN, LSFT(KC_COLN))
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
   ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LSFT(KC_MINS))
-
-  ,[CT_S] = ACTION_TAP_DANCE_DOUBLE (KC_S, LCTL(KC_S))
-  ,[CT_Z] = ACTION_TAP_DANCE_DOUBLE (KC_Z, LCTL(KC_Z))
-  ,[CT_X] = ACTION_TAP_DANCE_DOUBLE (KC_X, LCTL(KC_X))
-  ,[CT_C] = ACTION_TAP_DANCE_DOUBLE (KC_C, LCTL(KC_C))
-  ,[CT_V] = ACTION_TAP_DANCE_DOUBLE (KC_V, LCTL(KC_V))
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
