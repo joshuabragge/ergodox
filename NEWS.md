@@ -2,6 +2,11 @@
 
 ## v1.7
 
+*2018-12-03*
+
+* Removed `CTRL`+`SHIFT` when held or `SPACE` when tapped from movement layer due to lack of use. End up manually using `CTRL`+`SHIFT` when navigating excel.
+* Added `Print Screen` to movement layer.
+
 *2018-12-02*
 
 * Moved over `0` and `.` on numberpad layer to match planck.

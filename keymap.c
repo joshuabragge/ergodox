@@ -112,14 +112,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
  * |           | Del  | End  | PgDn | Vol- | Next |      |           |      |      |      |      |      |      |           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      |      |      |                                       |      |      |      |      |      |
+ *      |PrnScn|      |      |      |      |                                       |      |      |      |      |      |
  *      `----------------------------------'                                       `----------------------------------'
  *                                         ,-------------.           ,-------------.
  *                                         |      |      |           |      |      |
  *                                  ,------|------|------|           |------+------+------.
- *                                  | Ctrl+|      |      |           |      |      |      |
- *                                  | Shift|      |------|           |------|      |      |
- *                                  |/Space|      |      |           |      |      |      |
+ *                                  |      |      |      |           |      |      |      |
+ *                                  |      |      |------|           |------|      |      |
+ *                                  |      |      |      |           |      |      |      |
  *                                  `--------------------'           `--------------------'
  */
 
@@ -129,11 +129,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ,KC_TRNS ,KC_EXLM     ,KC_AT           ,KC_HASH          ,KC_DLR     ,KC_PERC    ,KC_TRNS
 ,KC_TRNS ,KC_INSERT   ,KC_HOME         ,KC_PGUP          ,KC_VOLU    ,KC_MPLY
 ,KC_TRNS ,KC_DEL      ,KC_END          ,KC_PGDN          ,KC_VOLD    ,KC_MNXT    ,KC_TRNS
-,KC_TRNS ,KC_TRNS     ,KC_TRNS         ,KC_TRNS          ,KC_TRNS
+,KC_PSCR ,KC_TRNS     ,KC_TRNS         ,KC_TRNS          ,KC_TRNS
 
                                                                         ,KC_TRNS ,KC_TRNS
                                                                                  ,KC_TRNS
-                                                      ,C_S_T(KC_SPC)  ,KC_TRNS   ,KC_TRNS
+                                                      ,KC_TRNS        ,KC_TRNS   ,KC_TRNS
 
                                                                 // right hand
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS       ,KC_TRNS       ,KC_TRNS          ,KC_TRNS  ,KC_TRNS
