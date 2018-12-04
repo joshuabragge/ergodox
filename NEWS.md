@@ -6,6 +6,7 @@
 
 * Removed `CTRL`+`SHIFT` when held or `SPACE` when tapped from movement layer due to lack of use. End up manually using `CTRL`+`SHIFT` when navigating excel.
 * Added `Print Screen` to movement layer.
+* Removed leader `T` = `ALT`+`TAB`. 
 
 *2018-12-02*
 
