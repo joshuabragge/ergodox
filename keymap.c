@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- *|ESC/AltF4|   1  |  2   |   3  |   4  |   5  | FUNC |           | FUNC |   6  |   7  |   8  |   9  |   0  |    \   |
+ *|ESC/AltF4|   1  |  2   |   3  |   4  |   5  |ScrLCK|           |Unlock|   6  |   7  |   8  |   9  |   0  |    \   |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |    =   |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |      |  F2  | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |ScrLCK| PLVR |       |QWERTY|ctrl+alt+del|
+ *                                        | FUNC | PLVR |       |QWERTY| FUNC |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Ctrl |       | LAlt |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
@@ -82,21 +82,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        OSL(FUNC),
+        TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        LGUI(KC_L),
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
         KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
         KC_NO,              KC_F2,   KC_LALT, TT(SWPHND),MO(NMBR),
-                                                                        LGUI(KC_L),  TT(PLVR),
+                                                                        OSL(FUNC),  TT(PLVR),
                                                                                      F(F_CTRL),
                                                             KC_SPC,     KC_LSHIFT,   KC_LGUI,
         // right hand
-             OSL(FUNC),       KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
+             ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
              TD(CT_NAV),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
                                      MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              KC_NO,
-             TT(QWERT),      ALTG(KC_DELT),
+             TT(QWERT),      OSL(FUNC),
              F(F_ALT),
              KC_LEAD,         KC_ENT, KC_BSPC
     ),

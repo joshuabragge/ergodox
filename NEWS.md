@@ -21,7 +21,7 @@
 * Removed mouse movement keys - was not able to abopt it into my workflow no matter how hard I forced it.
 * Added symbols to movement layer.
 * Added function layer for F keys.
-* Moved `GUI` + `L` and `CTRL` + `ALT` + `DEL` buttons down to thumb cluster.
+* ~~Moved `GUI` + `L` and `CTRL` + `ALT` + `DEL` buttons down to thumb cluster.~~ Stupid idea - they were fine where they were. 
 * Moved around unused thumb cluster keys.
 * Added extra `ALT` ~~and `CTRL`~~ to be accessable by left hand. 
 
