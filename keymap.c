@@ -40,15 +40,15 @@ enum {
   CT_COL,
   CT_TA,
   CT_PGE,
-  CT_NAV,
   CT_UNDER,
 };
 
 /* Lead Variables */
 
-const char USERNAME[80] = "joshua.bragge";
-const char DB[80] = "joshua.bragge.db";
-const char SVR[80] = "joshua.bragge.svr";
+const char USERNAME[15] = "joshua.bragge";
+const char DB[15] = "joshua.bragge.db";
+const char SVR[20] = "joshua.bragge.svr";
+const char S[5] = "[SCD]";
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -60,15 +60,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |    =   |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |    '   |
- * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| 
- * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |--------+------+------+------+------+------| PgDwn|           |HYPER |------+------+------+------+------+--------| 
+ * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |      |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |  F2  | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
+ *   |      |      | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | FUNC | PLVR |       |QWERTY| FUNC |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      | Ctrl |       | LAlt |        |      |
+ *                                 |      |      |  F2  |       |  F5  |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
  *                                 |      |      | LGui |       | Lead |        |      |
  *                                 `--------------------'       `----------------------'
@@ -81,18 +81,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
         KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
-        KC_NO,              KC_F2,   KC_LALT, TT(SWPHND),MO(NMBR),
+        KC_NO,              KC_NO,   KC_LALT, TT(SWPHND),MO(NMBR),
                                                                         OSL(FUNC),  TT(PLVR),
-                                                                                     F(F_CTRL),
+                                                                                     KC_F2,
                                                             KC_SPC,     KC_LSHIFT,   KC_LGUI,
         // right hand
              ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
-             TD(CT_NAV),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
+             KC_HYPR,     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
                                      MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              KC_NO,
              TT(QWERT),      OSL(FUNC),
-             F(F_ALT),
+             KC_F5,
              KC_LEAD,         KC_ENT, KC_BSPC
     ),
 
@@ -430,7 +430,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     }
   ,[CT_RBP] = ACTION_TAP_DANCE_DOUBLE (KC_RPRN, KC_RBRC)
   ,[CT_PGE] = ACTION_TAP_DANCE_DOUBLE (KC_PGDN, KC_PGUP)
-  ,[CT_NAV] = ACTION_TAP_DANCE_DOUBLE (KC_WBAK, KC_WFWD)
   ,[CT_COL] = ACTION_TAP_DANCE_DOUBLE (KC_SCLN, LSFT(KC_COLN))
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
   ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LSFT(KC_MINS))
@@ -537,7 +536,7 @@ void matrix_scan_user(void) {
           unicode_input_start (); register_hex(0xaf); unicode_input_finish();
         }
         SEQ_THREE_KEYS(KC_S, KC_C, KC_D) {
-          SEND_STRING("[SCD]");
+          SEND_STRING(S);
         }
         SEQ_THREE_KEYS(KC_S, KC_V, KC_R) {
           send_string(SVR);

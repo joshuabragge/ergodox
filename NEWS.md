@@ -9,8 +9,11 @@
 * Removed leader `T` = `ALT`+`TAB`.
 * Removed various depreciated tap dance keys.
 * Moved `RESET` into function layer out of base.
-* Added F2 to base layer left hand. Will be able to rename files in Windows while right hand is on mouse.
-* Added `LEAD`+`F` = 'from:' for Outlook navigation. 
+* Removed thumb cluster tap `CTRL` and `ALT` due to lack of use.
+* Added F2 and F5 to base layer left hand due to frequency of use. Will be able to rename files in Windows while right hand is on mouse and open SimCorp windows without switching layers.
+* Added `LEAD`+`F` = 'from:' for Outlook navigation.
+* Removed web page navigation button due to lack of use and replaced with `HYPER`.
+* Changed `LEAD`+`S`+`C`+`D` to `LEAD`+`S` due to frequency of use.
 
 *2018-12-02*
 
