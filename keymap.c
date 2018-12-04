@@ -42,11 +42,6 @@ enum {
   CT_PGE,
   CT_NAV,
   CT_UNDER,
-  CT_S,
-  CT_Z,
-  CT_X,
-  CT_C,
-  CT_V,
 };
 
 /* Lead Variables */
