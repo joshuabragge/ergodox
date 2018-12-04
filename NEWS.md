@@ -19,7 +19,7 @@
 * Added function layer for F keys.
 * Moved `GUI` + `L` and `CTRL` + `ALT` + `DEL` buttons down to thumb cluster.
 * Moved around unused thumb cluster keys.
-* Added extra `ALT` and `CTRL` to be accessable by left hand. 
+* Added extra `ALT` ~~and `CTRL`~~ to be accessable by left hand. 
 
 
 ## v1.6
