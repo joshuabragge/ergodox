@@ -7,7 +7,8 @@
 * Removed `CTRL`+`SHIFT` when held or `SPACE` when tapped from movement layer due to lack of use. End up manually using `CTRL`+`SHIFT` when navigating excel.
 * Added `Print Screen` to movement layer.
 * Removed leader `T` = `ALT`+`TAB`.
-* Removed various depreciated tap dance keys. 
+* Removed various depreciated tap dance keys.
+* Moved `RESET` into function layer out of base. 
 
 *2018-12-02*
 

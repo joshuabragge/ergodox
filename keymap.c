@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| PgDwn|           |  <<  |------+------+------+------+------+--------| 
  * |  Ctrl  |  Z   |  X   |  C   |   V  |   B  | PgUp |           |  >>  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      | Alt  |      |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      | RESET |
+ *   |      | Alt  |      |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |GUI+L | PLVR |       |QWERTY|ctrl+alt+del|
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
              TD(CT_NAV),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
-                                     MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              RESET,
+                                     MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              KC_NO,
              TT(QWERT),      ALTG(KC_DELT),
              F(F_ALT),
              KC_LEAD,         KC_ENT, KC_BSPC
@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |         |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |       |      |      |      |      |                                       |      |      |      |     |      |
+ *   |       |      |      |      |      |                                       |      |      |      |      | RESET|
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
@@ -186,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,  KC_TRNS,   KC_TRNS,     KC_TRNS,     KC_TRNS,      KC_TRNS,   KC_TRNS,
                 KC_TRNS, KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,   KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,  KC_TRNS,
-                         KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,  KC_TRNS,
+                         KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,  RESET,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
