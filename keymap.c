@@ -567,5 +567,8 @@ void matrix_scan_user(void) {
           unregister_code(KC_LGUI);
           unregister_code(KC_L);
         }
+        SEQ_ONE_KEY(KC_F){
+          SEND_STRING("from:");
+        }
       }
     };

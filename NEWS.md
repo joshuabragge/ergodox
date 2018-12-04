@@ -9,7 +9,8 @@
 * Removed leader `T` = `ALT`+`TAB`.
 * Removed various depreciated tap dance keys.
 * Moved `RESET` into function layer out of base.
-* Added F2 to base layer left hand. Will be able to rename files in Windows while right hand is on mouse. 
+* Added F2 to base layer left hand. Will be able to rename files in Windows while right hand is on mouse.
+* Added `LEAD`+`F` = 'from:' for Outlook navigation. 
 
 *2018-12-02*
 
