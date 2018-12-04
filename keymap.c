@@ -45,10 +45,11 @@ enum {
 
 /* Lead Variables */
 
-const char USERNAME[15] = "joshua.bragge";
-const char DB[15] = "joshua.bragge.db";
+const char JB[15] = "joshua.bragge";
+const char DB[20] = "joshua.bragge.db";
 const char SVR[20] = "joshua.bragge.svr";
 const char S[5] = "[SCD]";
+const char F[5] = "from:";
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -535,8 +536,8 @@ void matrix_scan_user(void) {
           TAP_ONCE (KC_SLSH);
           unicode_input_start (); register_hex(0xaf); unicode_input_finish();
         }
-        SEQ_THREE_KEYS(KC_S, KC_C, KC_D) {
-          SEND_STRING(S);
+        SEQ_ONE_KEY(KC_S) {
+          send_string(S);
         }
         SEQ_THREE_KEYS(KC_S, KC_V, KC_R) {
           send_string(SVR);
@@ -545,7 +546,7 @@ void matrix_scan_user(void) {
           send_string(DB);
         }
         SEQ_TWO_KEYS(KC_J, KC_B) {
-          send_string(USERNAME);
+          send_string(JB);
         }    
         SEQ_ONE_KEY(KC_U) {
           register_code(KC_DELT);
@@ -562,7 +563,7 @@ void matrix_scan_user(void) {
           unregister_code(KC_L);
         }
         SEQ_ONE_KEY(KC_F){
-          SEND_STRING("from:");
+          send_string(F);
         }
       }
     };
