@@ -48,8 +48,8 @@ enum {
 const char JB[15] = "joshua.bragge";
 const char DB[20] = "joshua.bragge.db";
 const char SVR[20] = "joshua.bragge.svr";
-const char S[5] = "[SCD]";
-const char F[5] = "from:";
+const char SCD[10] = "[SCD]";
+const char FROM[10] = "from:";
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -537,7 +537,7 @@ void matrix_scan_user(void) {
           unicode_input_start (); register_hex(0xaf); unicode_input_finish();
         }
         SEQ_ONE_KEY(KC_S) {
-          send_string(S);
+          send_string(SCD);
         }
         SEQ_THREE_KEYS(KC_S, KC_V, KC_R) {
           send_string(SVR);
@@ -563,7 +563,7 @@ void matrix_scan_user(void) {
           unregister_code(KC_L);
         }
         SEQ_ONE_KEY(KC_F){
-          send_string(F);
+          send_string(FROM);
         }
       }
     };
