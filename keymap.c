@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| PgDwn|           |HYPER |------+------+------+------+------+--------| 
  * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |      |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
+ *   |      |      | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|Explr |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | FUNC | PLVR |       |QWERTY| FUNC |
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
              KC_HYPR,     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
-                                     MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              KC_NO,
+                                     MO(MVMNT),TT(SWPHND),LGUI(KC_E),    KC_NO,              KC_NO,
              TT(QWERT),      OSL(FUNC),
              KC_F5,
              KC_LEAD,         KC_ENT, KC_BSPC
@@ -564,6 +564,12 @@ void matrix_scan_user(void) {
         }
         SEQ_ONE_KEY(KC_F){
           send_string(FROM);
+        }
+        SEQ_TWO_KEYS (KC_W, KC_M) {
+          register_code(KC_LGUI);
+          register_code(KC_UP);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_UP);
         }
       }
     };

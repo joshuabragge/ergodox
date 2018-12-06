@@ -2,6 +2,12 @@
 
 ## v1.7
 
+*2018-12-05*
+
+* Cleaned up `LEAD` + `S`/`F` bug due to short character length variable - increased from 5 to 10.
+* Added `GUI`+`E` button to shortcut open windows explorer.
+* Added `LEAD`+`W`+`M` = `GUI`+`UP` to maximize window.
+
 *2018-12-03*
 
 * Removed `CTRL`+`SHIFT` when held or `SPACE` when tapped from movement layer due to lack of use. End up manually using `CTRL`+`SHIFT` when navigating excel.
