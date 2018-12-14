@@ -1,11 +1,14 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
-joshua's layout
+SIMAK Layout
 ======================
 
-This is a colemak layout for the [ErgoDox Ez][ergodox-ez]. This is optimized for SimCorp Business System Anaylst using Windows.
+This is a [Colemak][colemak] keyboard layout for the [ErgoDox Ez][ergodox-ez]. The layout is refined and tuned according to the demands of a SimCorp Anaylst working in a Windows environment. This layout is heavily influenced by the greatest keyboard firmware hacker of our time - [algernon][algernon] - and his thrilling [blog][blog].
 
+[colemak]: https://en.wikipedia.org/wiki/Colemak
 [ergodox-ez]: https://ergodox-ez.com/
+[algernon]: https://github.com/algernon/ergodox-layout
+[blog]: https://asylum.madhouse-project.org/blog/tags/ergodox/
 
 ## Table of Contents
 
@@ -24,11 +27,6 @@ This is a colemak layout for the [ErgoDox Ez][ergodox-ez]. This is optimized for
 ## Base layer
 
 [![Base layer](https://github.com/joshuabragge/ergodox/blob/master/images/base-layer.png)](http://www.keyboard-layout-editor.com/#/gists/dcfe02aa9e3c71d0d9e90ea362bb8889)
-
-This is a Colemak layout, heavily influenced by the greatest keyboard layout theorist of our time, [algernon][algernon] and his thrilling [blog][blog].
-
-[algernon]: https://github.com/algernon/ergodox-layout
-[blog]: https://asylum.madhouse-project.org/blog/tags/ergodox/
 
 Features:
 * Tapping the `ESC` key once yields `ESC`. Double-tapping the `ESC` key triggers `ALT`+`F4`,
