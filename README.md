@@ -25,7 +25,7 @@ This is a colemak layout for the [ErgoDox Ez][ergodox-ez]. This is optimized for
 
 [![Base layer](https://github.com/joshuabragge/ergodox/blob/master/images/base-layer.png)](http://www.keyboard-layout-editor.com/#/gists/dcfe02aa9e3c71d0d9e90ea362bb8889)
 
-This is a Colemak layout, heavily influenced by the greatst keyboard layout theorist of our time, [algernon][algernon] and his thrilling [blog][blog].
+This is a Colemak layout, heavily influenced by the greatest keyboard layout theorist of our time, [algernon][algernon] and his thrilling [blog][blog].
 
 [algernon]: https://github.com/algernon/ergodox-layout
 [blog]: https://asylum.madhouse-project.org/blog/tags/ergodox/
