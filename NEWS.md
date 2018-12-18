@@ -2,6 +2,9 @@
 
 ## v1.7
 
+*2018-12-17*
+* Added `LEAD`+`D` turns off keylogger console print statements.
+
 *2018-12-05*
 
 * Cleaned up `LEAD` + `S`/`F` bug due to short character length variable - increased from 5 to 10.

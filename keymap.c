@@ -3,6 +3,7 @@
 #include "action_layer.h"
 #include "keymap_plover.h"
 #include "version.h"
+#include <print.h>
 
 /* Layers */
 
@@ -43,6 +44,8 @@ enum {
   CT_UNDER,
 };
 
+bool log_enable = true;
+
 /* Lead Variables */
 
 const char JB[15] = "joshua.bragge";
@@ -50,6 +53,7 @@ const char DB[20] = "joshua.bragge.db";
 const char SVR[20] = "joshua.bragge.svr";
 const char SCD[10] = "[SCD]";
 const char FROM[10] = "from:";
+
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -455,24 +459,22 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  //uint8_t layer = biton32(layer_state);
-  //if (keycode == KC_ESC && record->event.pressed) {
-    //bool queue = true;
-    //if (layer_state & (1UL << MVMNT)) {
-    //layer_off (MVMNT);
-    //queue = false;
-    //}
-    //return queue;
-  //}
+    uint8_t layer = biton32(layer_state);
+    if (log_enable) {
+      if (layer == BASE)
+        uprintf ("KL|%02d|%02d|%d|%s\n", record->event.key.col, record->event.key.row, record->event.pressed, "BASE");
+      else if (layer == MVMNT)
+        uprintf ("KL|%02d|%02d|%d|%s\n", record->event.key.col, record->event.key.row, record->event.pressed, "MVMNT");
+      else if (layer == FUNC)
+        uprintf ("KL|%02d|%02d|%d|%s\n", record->event.key.col, record->event.key.row, record->event.pressed, "FUNC");
+      else if (layer == NMBR)
+        uprintf ("KL|%02d|%02d|%d|%s\n", record->event.key.col, record->event.key.row, record->event.pressed, "NMBR");
+      else if (layer == SWPHND)
+        uprintf ("KL|%02d|%02d|%d|%s\n", record->event.key.col, record->event.key.row, record->event.pressed, "SWPHND");
+      else 
+        uprintf ("KL|%02d|%02d|%d|%s\n", record->event.key.col, record->event.key.row, record->event.pressed, "OTHER");
+    }
 
-  switch (keycode) {
-    case VRSN:
-      if (record->event.pressed) {
-        SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-      }
-      return false;
-      break;
-  }
   return true;
 }
 
@@ -570,6 +572,12 @@ void matrix_scan_user(void) {
           register_code(KC_UP);
           unregister_code(KC_LGUI);
           unregister_code(KC_UP);
+        }
+        SEQ_ONE_KEY (KC_D) {
+          ergodox_led_all_on();
+          wait_ms(100);
+          ergodox_led_all_off();
+          log_enable = !log_enable;
         }
       }
     };
