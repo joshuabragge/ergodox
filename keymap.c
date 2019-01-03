@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| Snip |           |  >>  |------+------+------+------+------+--------| 
  * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  |Divvy |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | PgUp |PgDwn | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
+ *   | PgUp |PgDwn | Alt  |SWPHND| NMBR |                                       | MVMNT|      |      |      | NMBR |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | FUNC | PLVR |       |      | FUNC |
@@ -90,12 +90,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                         OSL(FUNC),  TT(PLVR),
                                                                                      KC_F2,
                                                             KC_SPC,     KC_LSHIFT,   KC_LGUI,
-        // right hand
+        // right hand'
              ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
-             TD(CT_SWITCH),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
-                                     MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              KC_NO,
+             TD(CT_SWITCH),     KC_K,   KC_M,  KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
+                                     MO(MVMNT),KC_NO ,    KC_NO,    KC_NO,              TG(NMBR),
              KC_NO,      OSL(FUNC),
              KC_F5,
              KC_LEAD,         KC_ENT, KC_BSPC

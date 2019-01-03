@@ -7,6 +7,7 @@ Changes were influenced by one week's worth of logging data.
 * Added `LEAD`+`E` = `GUI`+`E` and removed dedicated shortcut
 * Added active window toggling with `ALT`+`ESC`. Double tap for previous active window or `ALT`+`SHIFT`+`ESC`.
 * Switch `TAB` and MVMNT layer functionality with NMBR.
+* Added toggle NMBR layer key to right side of keyboard.
 * Updated swap layer to swap thumb clusters.
 * Updated logging flag to be false by default.
 * Moved `PGUP`/`PGDWN`.
