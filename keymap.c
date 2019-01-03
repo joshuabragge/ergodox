@@ -346,7 +346,7 @@ KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,
  *                                         |      |      |           |      |      |
  *                                  ,------|------|------|           |------+------+------.
  *                                  |      |      |      |           |      |      |      |
- *                                  |      |      |------|           |------|      |      |
+ *                                  | Back |Enter |------|           |------|LShift| Space|
  *                                  |      |      |      |           |      |      |      |
  *                                  `--------------------'           `--------------------'
  */
@@ -361,7 +361,7 @@ KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,
 
                                                                         ,KC_TRNS ,KC_TRNS
                                                                                  ,KC_TRNS
-                                                          ,KC_TRNS  ,KC_TRNS, KC_TRNS
+                                                          ,KC_BSPC, KC_ENT, KC_TRNS
 
                                                                 // right hand
                                                                ,KC_TRNS ,KC_1 ,KC_2       ,KC_3       ,KC_4          ,KC_5     ,KC_TRNS
@@ -372,7 +372,7 @@ KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,
 
                                                                ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS
+                                                               ,KC_TRNS ,KC_LSHIFT ,KC_SPC
 ),
 
 };
