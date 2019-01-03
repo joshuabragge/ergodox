@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   | PgUp |PgDwn | Alt  |SWPHND| NMBR |                                       | MVMNT|      |      |      | NMBR |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | FUNC | PLVR |       |      | FUNC |
+ *                                        | FUNC |      |       |      | FUNC |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |  F2  |       |  F5  |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
         KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_WINDOWS),
         KC_PGUP,            KC_PGDN,   KC_LALT, TT(SWPHND),MO(NMBR),
-                                                                        OSL(FUNC),  TT(PLVR),
+                                                                        OSL(FUNC),  KC_NO,
                                                                                      KC_F2,
                                                             KC_SPC,     KC_LSHIFT,   KC_LGUI,
         // right hand'
@@ -161,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |       |      |      |      |      |                                       |      |      |      |      | RESET|
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
+ *                                        |      | PLVR |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      |      |       |      |      |      |
  *                                 |      |      |------|       |------|      |      |
@@ -178,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
-                                       KC_TRNS,KC_TRNS,
+                                       KC_TRNS,TG(PLVR),
                                                KC_TRNS,
                                KC_TRNS,KC_TRNS,KC_TRNS,
        // right hand
@@ -262,7 +262,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [PLVR] = LAYOUT_ergodox(
 // left hand
-KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,   KC_NO,
+TG(PLVR),  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,   KC_NO,
 KC_NO,  PV_NUM, PV_NUM, PV_NUM,  PV_NUM, PV_NUM,  PV_NUM,
 KC_NO,  PV_LS,  PV_LT,  PV_LP,   PV_LH,  PV_STAR,
 KC_NO,  PV_LS,  PV_LK,  PV_LW,   PV_LR,  PV_STAR, PV_STAR,
