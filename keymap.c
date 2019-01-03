@@ -45,7 +45,7 @@ enum {
   CT_SWITCH,
 };
 
-bool log_enable = true;
+bool log_enable = false;
 
 /* Lead Variables */
 
