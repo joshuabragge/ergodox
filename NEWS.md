@@ -11,7 +11,7 @@ Changes were influenced by one week's worth of logging data.
 * Updated logging flag to be false by default.
 * Moved `PGUP`/`PGDWN`.
 * Added `MEH`+`S` for snipping shortcut and `MEH`+`W` for Divvy shortcut.
-
+* Fixed `LEAD`+`L` and `LEAD`+`U`.
 
 ## v1.7
 
