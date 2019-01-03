@@ -4,7 +4,7 @@
 
 Changes were influenced by one week's worth of logging data.
 
-* Added `LEAD`+`E` = `GUI`+`E`
+* Added `LEAD`+`E` = `GUI`+`E` and removed dedicated shortcut
 
 ## v1.7
 
