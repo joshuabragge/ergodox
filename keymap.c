@@ -509,9 +509,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 // Runs just one time when the keyboard initializes.
 void matrix_init_user(void) {
-#ifdef RGBLIGHT_COLOR_LAYER_0
-  rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
-#endif
+  ergodox_led_all_on();
+  for (int i = LED_BRIGHTNESS_HI; i > LED_BRIGHTNESS_LO; i--) {
+    ergodox_led_all_set (i);
+    wait_ms (5);
+  }
+  wait_ms(100);
+  for (int i = LED_BRIGHTNESS_LO; i > 0; i--) {
+    ergodox_led_all_set (i);
+    wait_ms (5);
+  }
+  ergodox_led_all_off();
 };
 
 LEADER_EXTERNS();
@@ -585,18 +593,18 @@ void matrix_scan_user(void) {
           unregister_code(KC_LGUI);
         }
         SEQ_ONE_KEY(KC_U) {
-          register_code(KC_DELT);
-          register_code(KC_LALT);
           register_code(KC_LCTRL);
-          unregister_code(KC_DELT);
-          unregister_code(KC_LALT);
+          register_code(KC_LALT);
+          register_code(KC_DELT);
           unregister_code(KC_LCTRL);
+          unregister_code(KC_LALT);
+          unregister_code(KC_DELT);
         } 
         SEQ_ONE_KEY(KC_L) {
           register_code(KC_LGUI);
           register_code(KC_L);
-          unregister_code(KC_LGUI);
           unregister_code(KC_L);
+          unregister_code(KC_LGUI);
         }
         SEQ_ONE_KEY(KC_F){
           send_string(FROM);

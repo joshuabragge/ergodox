@@ -12,6 +12,7 @@ Changes were influenced by one week's worth of logging data.
 * Moved `PGUP`/`PGDWN`.
 * Added `MEH`+`S` for snipping shortcut and `MEH`+`W` for Divvy shortcut.
 * Fixed `LEAD`+`L` and `LEAD`+`U`.
+* Added startup light display.
 
 ## v1.7
 
