@@ -40,7 +40,7 @@ enum {
   CT_ESCF4,
   CT_COL,
   CT_TA,
-  CT_PGE,
+  CT_WINDOWS,
   CT_UNDER,
   CT_SWITCH,
 };
@@ -66,10 +66,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |    =   |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/NMBR|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |    '   |
- * |--------+------+------+------+------+------| PgDwn|           |  >>  |------+------+------+------+------+--------| 
- * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |--------+------+------+------+------+------| Snip |           |  >>  |------+------+------+------+------+--------| 
+ * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  |Divvy |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
+ *   | PgUp |PgDwn | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | FUNC | PLVR |       |QWERTY| FUNC |
@@ -86,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        LGUI(KC_L),
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
-        KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_PGE),
-        KC_NO,              KC_NO,   KC_LALT, TT(SWPHND),MO(NMBR),
+        KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_WINDOWS),
+        KC_PGUP,            KC_PGDN,   KC_LALT, TT(SWPHND),MO(NMBR),
                                                                         OSL(FUNC),  TT(PLVR),
                                                                                      KC_F2,
                                                             KC_SPC,     KC_LSHIFT,   KC_LGUI,
@@ -459,7 +459,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
       .user_data = (void *)&((td_ta_state_t) { false, false })
     }
   ,[CT_RBP] = ACTION_TAP_DANCE_DOUBLE (KC_RPRN, KC_RBRC)
-  ,[CT_PGE] = ACTION_TAP_DANCE_DOUBLE (KC_PGDN, KC_PGUP)
+  ,[CT_WINDOWS] = ACTION_TAP_DANCE_DOUBLE (MEH(KC_S), MEH(KC_W))
   ,[CT_COL] = ACTION_TAP_DANCE_DOUBLE (KC_SCLN, LSFT(KC_COLN))
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
   ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LSFT(KC_MINS))

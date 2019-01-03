@@ -9,6 +9,9 @@ Changes were influenced by one week's worth of logging data.
 * Switch `TAB` and MVMNT layer functionality with NMBR.
 * Updated swap layer to swap thumb clusters.
 * Updated logging flag to be false by default.
+* Moved `PGUP`/`PGDWN`.
+* Added `MEH`+`S` for snipping shortcut and `MEH`+`W` for Divvy shortcut.
+
 
 ## v1.7
 
