@@ -241,7 +241,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 5: Steno for Plover
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |  Exit  |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |   #  |   #  |   #  |   #  |   #  |   #  |           |  #   |  #   |  #   |   #  |   #  |  #   |   #    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -499,8 +499,6 @@ void matrix_scan_user(void) {
       } else if (layer == SWPHND) {
         ergodox_right_led_1_on();
         ergodox_right_led_1_set (LED_BRIGHTNESS_LO);
-        ergodox_right_led_2_on();
-        ergodox_right_led_2_set (LED_BRIGHTNESS_LO);
         ergodox_right_led_3_on();
         ergodox_right_led_3_set (LED_BRIGHTNESS_LO);
       } else {

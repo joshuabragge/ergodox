@@ -16,6 +16,7 @@ Changes were influenced by one week's worth of logging data.
 * Added startup light display.
 * Removed QWERTY layer.
 * Moved PLVR layer to FUNCTION layer (one must hold down the FUNC while pressing the PLVR key since FUNC is OSL).
+* Updated the SWPHNDS layer lighs to be 1 and 3 on.
 
 ## v1.7
 
