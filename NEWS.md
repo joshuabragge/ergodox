@@ -6,6 +6,7 @@ Changes were influenced by one week's worth of logging data.
 
 * Added `LEAD`+`E` = `GUI`+`E` and removed dedicated shortcut
 * Added active window toggling with `ALT`+`ESC`. Double tap for previous active window or `ALT`+`SHIFT`+`ESC`.
+* Switch `TAB` and MVMNT layer functionality with NMBR.
 
 ## v1.7
 

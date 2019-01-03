@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |    =   |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
- * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |    '   |
+ * |Tab/NMBR|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |    '   |
  * |--------+------+------+------+------+------| PgDwn|           |  >>  |------+------+------+------+------+--------| 
  * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -392,7 +392,7 @@ static void ang_tap_dance_ta_finished (qk_tap_dance_state_t *state, void *user_d
   if (td_ta->sticky) {
     td_ta->sticky = false;
     td_ta->layer_toggle = false;
-    layer_off (MVMNT);
+    layer_off (NMBR);
     return;
   }
 
@@ -402,7 +402,7 @@ static void ang_tap_dance_ta_finished (qk_tap_dance_state_t *state, void *user_d
     td_ta->layer_toggle = false;
   } else {
     td_ta->layer_toggle = true;
-    layer_on (MVMNT);
+    layer_on (NMBR);
     td_ta->sticky = (state->count == 2);
   }
 }
@@ -413,7 +413,7 @@ static void ang_tap_dance_ta_reset (qk_tap_dance_state_t *state, void *user_data
   if (!td_ta->layer_toggle)
     unregister_code (KC_TAB);
   if (!td_ta->sticky)
-    layer_off (MVMNT);
+    layer_off (NMBR);
 }
 
 static void ang_tap_dance_toggle_window (qk_tap_dance_state_t *state, void *user_data) {
