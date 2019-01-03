@@ -549,7 +549,13 @@ void matrix_scan_user(void) {
         }
         SEQ_TWO_KEYS(KC_J, KC_B) {
           send_string(JB);
-        }    
+        }   
+        SEQ_ONE_KEY(KC_E) {
+          register_code(KC_LGUI);
+          register_code(KC_E);
+          unregister_code(KC_E);
+          unregister_code(KC_LGUI);
+        }
         SEQ_ONE_KEY(KC_U) {
           register_code(KC_DELT);
           register_code(KC_LALT);

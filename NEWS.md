@@ -1,5 +1,11 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v 1.8
+
+Changes were influenced by one week's worth of logging data.
+
+* Added `LEAD`+`E` = `GUI`+`E`
+
 ## v1.7
 
 *2018-12-17*
