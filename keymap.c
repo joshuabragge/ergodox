@@ -42,6 +42,7 @@ enum {
   CT_TA,
   CT_PGE,
   CT_UNDER,
+  CT_SWITCH,
 };
 
 bool log_enable = true;
@@ -65,8 +66,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  Del   |   Q  |   W  |   F  |   P  |   G  |  (   |           |   )  |   J  |   L  |   U  |   Y  | ;/:  |    =   |
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/MVNT|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |    '   |
- * |--------+------+------+------+------+------| PgDwn|           |HYPER |------+------+------+------+------+--------| 
- * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |      |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |--------+------+------+------+------+------| PgDwn|           |  >>  |------+------+------+------+------+--------| 
+ * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  | PgUp |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      | Alt  |SWPHND| NMBR |                                       | MVMNT|SWPHND|      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -94,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
-             KC_HYPR,     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
+             TD(CT_SWITCH),     KC_K,   KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
                                      MO(MVMNT),TT(SWPHND),KC_NO,    KC_NO,              KC_NO,
              TT(QWERT),      OSL(FUNC),
              KC_F5,
@@ -415,6 +416,30 @@ static void ang_tap_dance_ta_reset (qk_tap_dance_state_t *state, void *user_data
     layer_off (MVMNT);
 }
 
+static void ang_tap_dance_toggle_window (qk_tap_dance_state_t *state, void *user_data) {
+
+  if (state->count >= 2) {
+    // back on windows
+    register_code(KC_LALT);
+    register_code(KC_LSHIFT);
+    wait_ms(10);
+    register_code(KC_ESC);
+    unregister_code(KC_ESC);
+    wait_ms(10);
+    unregister_code(KC_LALT);
+    unregister_code(KC_LSHIFT);
+  }
+  else {
+    // toggle windows forward
+    register_code(KC_LALT);
+    wait_ms(10);
+    register_code(KC_ESC);
+    unregister_code(KC_ESC);
+    wait_ms(10);
+    unregister_code(KC_LALT);
+  }
+}
+
 
 //const uint16_t PROGMEM fn_actions[] = {
 //    [1] = ACTION_LAYER_TAP_TOGGLE(BASE)                // FN1 - Momentary Layer 1 (Symbols)
@@ -438,6 +463,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   ,[CT_COL] = ACTION_TAP_DANCE_DOUBLE (KC_SCLN, LSFT(KC_COLN))
   ,[CT_ESCF4] = ACTION_TAP_DANCE_DOUBLE (KC_ESC, LALT(KC_F4))
   ,[CT_UNDER] = ACTION_TAP_DANCE_DOUBLE (KC_MINS, LSFT(KC_MINS))
+  ,[CT_SWITCH] = ACTION_TAP_DANCE_FN (ang_tap_dance_toggle_window)
+
+  ,[CT_SWITCH]= ACTION_TAP_DANCE_FN (ang_tap_dance_toggle_window)
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
