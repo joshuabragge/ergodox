@@ -13,6 +13,7 @@ Changes were influenced by one week's worth of logging data.
 * Added `MEH`+`S` for snipping shortcut and `MEH`+`W` for Divvy shortcut.
 * Fixed `LEAD`+`L` and `LEAD`+`U`.
 * Added startup light display.
+* Removed QWERTY layer.
 
 ## v1.7
 
