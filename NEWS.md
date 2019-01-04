@@ -17,6 +17,12 @@ Changes were influenced by one week's worth of logging data.
 * Removed QWERTY layer.
 * Moved PLVR layer to FUNCTION layer (one must hold down the FUNC while pressing the PLVR key since FUNC is OSL).
 * Updated the SWPHNDS layer lighs to be 1 and 3 on.
+* Moved `CTRL` away from pinky to thumb - based on heatmap data usage (`CTRL` is used 3-5%).
+* Added function, movement and number layer keys to thumb cluster for one handed usage.
+* Moved F5 to right handed thumb cluster for easier access - based on heatmap data usage.
+* Moved swap hands layer to thumb cluster - test to see if my data is accurate or if my usage is accidental strokes.
+* Moved `LGUI` to less prime location due to lack of use based on heatmap data.
+* Removed right thumb cluster function layer due to lack of use based on heatmap data.
 
 ## v1.7
 

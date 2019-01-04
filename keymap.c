@@ -66,16 +66,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  [   |           |   ]  |------+------+------+------+------+--------|
  * |Tab/NMBR|   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |    '   |
  * |--------+------+------+------+------+------| Snip |           |  >>  |------+------+------+------+------+--------| 
- * |  Ctrl  |   Z  |  X   |  C   |   V  |   B  |Divvy |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
+ * |  Lead  |   Z  |  X   |  C   |   V  |   B  |Divvy |           |  <<  |   K  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | PgUp |PgDwn | Alt  |SWPHND| NMBR |                                       | MVMNT|      |      |      | NMBR |
+ *   | PgUp |PgDwn |      |      | LCtrl|                                       | MVMNT|      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | FUNC |      |       |      | FUNC |
+ *                                        | FUNC | MVMNT|       | LAlt | LGui |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      |  F2  |       |  F5  |        |      |
+ *                                 |      |      | NMBR |       |  F2  |        |      |
  *                                 | Space|Shift |------|       |------| Enter  | BkSp |
- *                                 |      |      | LGui |       | Lead |        |      |
+ *                                 |      |      |SWPHND|       |  F5  |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -85,20 +85,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD(CT_ESCF4),       KC_1,      KC_2,     KC_3,      KC_4,       KC_5,        LGUI(KC_L),
         KC_DELT,            KC_Q,      KC_W,     KC_F,      KC_P,       KC_G,        TD(CT_LBP),
         TD(CT_TA),          KC_A,      KC_R,     KC_S,      KC_T,       KC_D,
-        KC_LCTRL,           KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_WINDOWS),
-        KC_PGUP,            KC_PGDN,   KC_LALT, TT(SWPHND),MO(NMBR),
-                                                                        OSL(FUNC),  KC_NO,
-                                                                                     KC_F2,
-                                                            KC_SPC,     KC_LSHIFT,   KC_LGUI,
+        KC_LEAD,            KC_Z,      KC_X,     KC_C,      KC_V,       KC_B,        TD(CT_WINDOWS),
+        KC_PGUP,            KC_PGDN,   KC_LALT,  KC_NO,     KC_LCTRL,
+                                                                        OSL(FUNC),  TG(MVMNT),
+                                                                                    TG(NMBR),
+                                                            KC_SPC,     KC_LSHIFT,  TG(SWPHND),
         // right hand'
              ALTG(KC_DELT),  KC_6,   KC_7,     KC_8,      KC_9,     KC_0,               KC_BSLS,
              TD(CT_RBP),     KC_J,   KC_L,     KC_U,      KC_Y,     TD(CT_COL),         KC_EQL,
                              KC_H,   KC_N,     KC_E,      KC_I,     KC_O,               KC_QUOT,
              TD(CT_SWITCH),     KC_K,   KC_M,  KC_COMM,   KC_DOT,   KC_SLSH,            TD(CT_UNDER),
-                                     MO(MVMNT),KC_NO ,    KC_NO,    KC_NO,              TG(NMBR),
-             KC_NO,      OSL(FUNC),
-             KC_F5,
-             KC_LEAD,         KC_ENT, KC_BSPC
+                                     MO(MVMNT),KC_NO ,    KC_NO,    KC_NO,              KC_NO,
+             F(F_ALT),      KC_LGUI,
+             KC_F2,
+             KC_F5,         KC_ENT, KC_BSPC
     ),
 
 /* Keymap 1: Arrow layer
