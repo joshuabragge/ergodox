@@ -45,7 +45,7 @@ Features:
     - `LEAD f` types "from:"
     - `LEAD w m` maximizes the current window
     - `LEAD l` sends `LGUI` + `L` locking the computer
-    - `LEAD u` sends `LCTRL` + `LALT` + `DEL` unlocking the computer (WIP)
+    - `LEAD u` sends `LCTRL` + `LALT` + `DEL` unlocking the computer
 
 ## Movement layer
 
