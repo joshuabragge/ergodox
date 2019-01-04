@@ -81,9 +81,8 @@ For the layers, the following colours apply:
 * When the **Movement** layer is active, *green* will turn on.
 * When the **Function** layer is active, *red* will turn on.
 * When the **Number** layer is active, *blue* will turn on.
-* when the **Qwerty** layer is active, *blue* and *red* will turn on.
 * When the **Plover** layer is active, all the lights will turn on.
-* When the **Swap Hand** layer is active, all the lights will turn on.
+* When the **Swap Hand** layer is active, *blue* and *red* will turn on.
 
 # Building
 
