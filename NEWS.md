@@ -1,6 +1,12 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
-## v 1.8
+## v1.9
+
+*2019-02-08*
+Changes to bring in line differences between Keyboardio and Ergodox.
+
+
+## v1.8
 
 Changes were influenced by one week's worth of logging data.
 
